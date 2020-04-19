@@ -1,0 +1,1543 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="构建属于自己的项目, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
+    <meta name="description" content="主要针对“如何构建一个属于自己的计算机视觉项目”为主题进行展开。">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>构建属于自己的项目 | 上善若水</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="上善若水" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">上善若水</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Categories</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/lab" class="waves-effect waves-light">
+      
+      <i class="fas fa-eye" style="zoom: 0.6;"></i>
+      
+      <span>视界</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/medias" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/schedule">
+          
+          <i class="fas fa-th-large" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Schedule</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">上善若水</div>
+        <div class="logo-desc">
+            
+            温州大学 | 应用数学 | 深度学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Tags</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Categories</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/lab" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-eye"></i>
+			
+			视界
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/schedule " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-th-large" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Schedule</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xinetzone/xinetzone.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xinetzone/xinetzone.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/12.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">构建属于自己的项目</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/git/">
+                                <span class="chip bg-color">git</span>
+                            </a>
+                        
+                            <a href="/tags/github/">
+                                <span class="chip bg-color">github</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%A1%B9%E7%9B%AE/" class="post-category">
+                                项目
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-09-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-01-31
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    26 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <p>&#x672C;&#x7AE0;&#x4E3B;&#x8981;&#x9488;&#x5BF9;&#x201C;&#x5982;&#x4F55;&#x6784;&#x5EFA;&#x4E00;&#x4E2A;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x9879;&#x76EE;&#x201D;&#x4E3A;&#x4E3B;&#x9898;&#x8FDB;&#x884C;&#x5C55;&#x5F00;&#x3002;</p>
+<p>&#x672C;&#x7AE0;&#x5BFC;&#x822A;&#xFF1A;</p>
+<ul>
+<li>&#x5728; GitHub &#x4E0A;&#x521B;&#x5EFA;&#x4E2A;&#x4EBA;&#x9879;&#x76EE;</li>
+<li>&#x5229;&#x7528; Git &#x5B50;&#x6A21;&#x5757;&#x7EC4;&#x7EC7;&#x5B50;&#x9879;&#x76EE;</li>
+</ul>
+<h2 id="&#x521B;&#x5EFA;&#x4E2A;&#x4EBA;&#x9879;&#x76EE;">1 &#x521B;&#x5EFA;&#x4E2A;&#x4EBA;&#x9879;&#x76EE;</h2>
+<p>&#x7531;&#x4E8E;&#x6784;&#x5EFA;&#x4E2A;&#x4EBA;&#x6216;&#x8005;&#x516C;&#x53F8;&#x7684;&#x79C1;&#x6709;&#x670D;&#x52A1;&#x5668;&#x6D89;&#x53CA;&#x7684;&#x77E5;&#x8BC6;&#x70B9;&#x592A;&#x591A;&#xFF0C;&#x672C;&#x6587;&#x8003;&#x8651;&#x4EE5; GitHub &#x4F5C;&#x4E3A;&#x8FDC;&#x7AEF;&#x670D;&#x52A1;&#x5668;&#x6765;&#x6784;&#x5EFA;&#x4E2A;&#x4EBA;&#x9879;&#x76EE;&#x3002;&#x5982;&#x679C;&#x60A8;&#x7684;&#x79C1;&#x6709;&#x670D;&#x52A1;&#x5668;&#x5DF2;&#x7ECF;&#x642D;&#x5EFA;&#x597D;&#x4E86;&#x7684;&#x8BDD;&#xFF0C;&#x76F4;&#x63A5;&#x628A;&#x5B83;&#x5F53;&#x4F5C; GitHub &#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#x5373;&#x53EF;&#x3002;&#x56E0;&#x800C;&#xFF0C;&#x672C;&#x6587;&#x4ECB;&#x7ECD;&#x7684;&#x521B;&#x5EFA;&#x9879;&#x76EE;&#x7684;&#x65B9;&#x6CD5;&#x540C;&#x6837;&#x9002;&#x7528;&#x4E8E;&#x79C1;&#x6709;&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x533A;&#x522B;&#x4E0D;&#x8FC7;&#x662F;&#x60A8;&#x63D0;&#x4F9B;&#x7684;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5730;&#x5740;&#x4E0D;&#x540C;&#x548C;&#x4ED3;&#x5E93;&#x7684;&#x4F7F;&#x7528;&#x6743;&#x9650;&#x4E0D;&#x540C;&#x800C;&#x5DF2;&#x3002;&#x672C;&#x8282;&#x5185;&#x5BB9;&#x53C2;&#x8003;&#xFF1A;<a href="https://opensource.guide/zh-cn/" target="_blank" rel="noopener" class="uri">https://opensource.guide/zh-cn/</a>&#x3002;</p>
+<h3 id="&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;">1.1 &#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x9879;&#x76EE;</h3>
+<p>&#x7B2C; 1 &#x6B65;&#xFF1A;&#x5728; GitHub&#xFF08;<a href="https://github.com/" target="_blank" rel="noopener" class="uri">https://github.com/</a>&#xFF09;&#x4E0A;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#xFF0C;&#x53D6;&#x540D;&#x4E3A; <strong>cv-actions</strong>&#xFF0C;&#x63A5;&#x7740;&#x9009;&#x62E9;&#x4E00;&#x4E2A; <strong>LICENSE</strong>&#xFF08;&#x5982; GNU GPL v3.0&#xFF0C;&#x76F8;&#x5173;&#x4ECB;&#x7ECD;&#x89C1;&#xFF1A;<a href="https://zhuanlan.zhihu.com/p/56759711" target="_blank" rel="noopener" class="uri">https://zhuanlan.zhihu.com/p/56759711</a>&#xFF09; &#x548C; <strong>gitignore</strong>&#xFF08;&#x9009;&#x62E9; Python&#xFF09;&#x3002;&#x7136;&#x540E;&#x9009;&#x62E9; <code>settings</code>&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/set.png" alt><figcaption>&#x56FE;1 GitHub &#x7684; settings</figcaption>
+</figure>
+<p>&#x5F80;&#x4E0B;&#x6ED1;&#x52A8;&#x9F20;&#x6807;&#xFF0C;&#x627E;&#x5230; GitHub Pages&#xFF0C;&#x9009;&#x62E9;&#x4E3B;&#x9898;&#xFF0C;&#x968F;&#x540E;&#x4FBF;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x7F51;&#x5740;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/GithubPages.png" alt><figcaption>&#x56FE;2 GitHub Pages</figcaption>
+</figure>
+<p>&#x63A5;&#x7740;&#xFF0C;&#x586B;&#x5199;&#x9879;&#x76EE;&#x7684;&#x7B80;&#x4ECB;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/edit.png" alt><figcaption>&#x56FE; 3 &#x7F16;&#x5199;&#x9879;&#x76EE;&#x7B80;&#x4ECB;</figcaption>
+</figure>
+<p>&#x7B2C; 2 &#x6B65;&#xFF1A;&#x5C06;&#x8FDC;&#x7AEF;&#x7684;&#x9879;&#x76EE;&#x514B;&#x9686;&#x5230;&#x672C;&#x5730;&#x3002;&#x9996;&#x5148;&#xFF0C;&#x6309;&#x7167;&#x4E0B;&#x56FE;&#x64CD;&#x4F5C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;&#xFF08;<a href="https://github.com/xinetzone/cv-actions.git" target="_blank" rel="noopener" class="uri">https://github.com/xinetzone/cv-actions.git</a>&#xFF09;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/clone.png" alt><figcaption>&#x56FE;4 &#x83B7;&#x53D6;&#x8FDC;&#x7A0B;&#x4ED3;&#x5E93;&#x5730;&#x5740;</figcaption>
+</figure>
+<p>&#x7B2C; 3 &#x6B65;&#xFF1A;&#x5728;&#x672C;&#x5730;&#x7535;&#x8111;&#x7AEF;&#x6253;&#x5F00; vscode &#x5E76;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#xFF1A;</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a>$ <span class="fu">git</span> clone https://github.com/xinetzone/cv-actions.git</span>
+<span id="cb1-2"><a href="#cb1-2"></a>$ <span class="bu">cd</span> cv-actions/</span></code></pre></div>
+<p>&#x8FD9;&#x6837;&#x4FBF;&#x5728;&#x672C;&#x5730;&#x7AEF;&#x62E5;&#x6709;&#x4E00;&#x4E2A; cv-actions &#x7684;&#x526F;&#x672C;&#x3002;</p>
+<h3 id="&#x4FEE;&#x6539;-readme">1.2 &#x4FEE;&#x6539; README</h3>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x6765;&#x8BF4;&#xFF0C;README&#xFF08;&#x81EA;&#x8FF0;&#x6587;&#x6863;&#xFF09;&#x662F;&#x5341;&#x5206;&#x91CD;&#x8981;&#x7684;&#x3002;&#x81EA;&#x8FF0;&#x6587;&#x4EF6;&#x4E0D;&#x4EC5;&#x4EC5;&#x662F;&#x7528;&#x4E8E;&#x8BF4;&#x660E;&#x4EBA;&#x4EEC;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x4F60;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x8FD8;&#x8981;&#x89E3;&#x91CA;&#x4F60;&#x7684;&#x9879;&#x76EE;&#x4E3A;&#x4EC0;&#x4E48;&#x91CD;&#x8981;&#xFF0C;&#x4EE5;&#x53CA;&#x5B83;&#x53EF;&#x4EE5;&#x4E3A;&#x4F60;&#x7684;&#x7528;&#x6237;&#x505A;&#x4EC0;&#x4E48;&#x3002;&#x5728;&#x60A8;&#x7684;&#x81EA;&#x8FF0;&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x5C1D;&#x8BD5;&#x56DE;&#x7B54;&#x4EE5;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>What&#xFF1A;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x505A;&#x4EC0;&#x4E48;&#xFF1F;</li>
+<li>Why&#xFF1A;&#x4E3A;&#x4EC0;&#x4E48;&#x8FD9;&#x4E2A;&#x9879;&#x76EE;&#x6709;&#x7528;&#xFF1F;</li>
+<li>How&#xFF1A;&#x5982;&#x4F55;&#x5F00;&#x59CB;&#xFF1F;</li>
+<li>Help&#xFF1A;&#x5982;&#x679C;&#x9700;&#x8981;&#xFF0C;&#x6211;&#x53EF;&#x4EE5;&#x5728;&#x54EA;&#x91CC;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x7684;&#x5E2E;&#x52A9;&#xFF1F;</li>
+<li>Who&#xFF1A;&#x8C01;&#x7EF4;&#x62A4;&#x548C;&#x53C2;&#x4E0E;&#x9879;&#x76EE;&#xFF1F;</li>
+</ul>
+<p>&#x53C2;&#x8003;<span class="citation" data-cites="PurpleBooth">[@PurpleBooth]</span>(https://github.com/PurpleBooth) &#x7684; <a href="https://gist.github.com/PurpleBooth/109311bb0361f32d87a2" target="_blank" rel="noopener">README &#x6A21;&#x677F;</a> &#x7F16;&#x5199;&#x81EA;&#x8FF0;&#x6587;&#x6863; <a href="https://github.com/xinetzone/cv-actions/blob/master/README.md" target="_blank" rel="noopener">README</a>&#xFF08;<a href="https://github.com/xinetzone/cv-actions/blob/master/README.md" target="_blank" rel="noopener" class="uri">https://github.com/xinetzone/cv-actions/blob/master/README.md</a>&#xFF09;&#x3002;&#x5176;&#x4E2D;&#x7684;&#x56FE;&#x6807;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://xinetzone.github.io/zh-CN/f7c6a6b8.html">github &#x7F16;&#x5199; README &#x65F6;&#x5982;&#x4F55;&#x83B7;&#x53D6; fork &#x7B49;&#x56FE;&#x6807;</a>&#xFF08;<a href="https://xinetzone.github.io/zh-CN/f7c6a6b8.html" class="uri">https://xinetzone.github.io/zh-CN/f7c6a6b8.html</a>&#xFF09;&#x8FDB;&#x884C;&#x8BBE;&#x8BA1;&#x3002;</p>
+<p>&#x63A5;&#x7740;&#x521B;&#x5EFA;&#x4E00;&#x4E9B;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x4E9B;&#x76EE;&#x5F55;&#x5747;&#x4EE3;&#x8868;&#x4E0D;&#x540C;&#x7684;&#x529F;&#x80FD;&#x3002;&#x5728;&#x9879;&#x76EE;&#x6839;&#x76EE;&#x5F55;&#x6253;&#x5F00;&#x7EC8;&#x7AEF;&#x5E76;&#x8F93;&#x5165;&#xFF1A;</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="fu">mkdir</span> data draft models outputs app notebook</span></code></pre></div>
+<ul>
+<li><code>data/</code>: &#x6570;&#x636E;&#x7684;&#x5B58;&#x653E;</li>
+<li><code>models/</code>: &#x6A21;&#x578B;&#x7684;&#x53C2;&#x6570;&#x5B58;&#x50A8;</li>
+<li><code>outputs/</code>: &#x6A21;&#x578B;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;</li>
+<li><code>app/</code>&#xFF1A;&#x5B58;&#x653E;&#x76F8;&#x5173;&#x7684; API</li>
+<li><code>notebook/</code>&#xFF1A;&#x5B58;&#x653E; jupyter notebook &#x7B49;&#x76F8;&#x5173;&#x7684;&#x6587;&#x4EF6;</li>
+<li><code>draft/</code>&#xFF1A;(&#x53EF;&#x4EE5;&#x653E;&#x7F6E;&#x5728;&#x4EFB;&#x4F55;&#x4F4D;&#x7F6E;)&#x5B58;&#x653E;&#x4E00;&#x4E9B;&#x4E0D;&#x6210;&#x719F;&#x7684;&#x6216;&#x8005;&#x672A;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#x7684;&#x4E00;&#x4E9B;&#x76F8;&#x5173;&#x5185;&#x5BB9;&#xFF0C;&#x4E0D;&#x88AB;&#x4E0A;&#x4F20;&#x5230; github</li>
+</ul>
+<p>&#x5176;&#x4E2D; <code>data/</code>&#xFF0C;<code>models/</code>&#xFF0C;<code>draft/</code> &#x52A0;&#x5165;&#x5230; <code>.gitignore</code> &#x4E0D;&#x88AB; git &#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x8FDB;&#x5165;&#x9879;&#x76EE;&#x7684; Insights &#x680F;&#x76EE;&#xFF0C;&#x9009;&#x62E9; Community&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x770B;&#x5230;&#x56FE;5 &#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/checklist.png" alt><figcaption>&#x56FE;5 &#x9879;&#x76EE;&#x914D;&#x7F6E;&#x68C0;&#x67E5;&#x5217;&#x8868;</figcaption>
+</figure>
+<p>&#x56FE;5 &#x5217;&#x51FA;&#x4E86;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x89C4;&#x8303;&#x7684;&#x9879;&#x76EE;&#x9700;&#x8981;&#x6EE1;&#x8DB3;&#x7684;&#x6587;&#x4EF6;&#x7684;&#x6E05;&#x5355;&#x3002;&#x540E;&#x7EED;&#x7AE0;&#x8282;&#x5C06;&#x9010;&#x6E10;&#x586B;&#x5145;&#x68C0;&#x67E5;&#x6E05;&#x5355;&#x3002;</p>
+<h3 id="&#x7F16;&#x5199;&#x8D21;&#x732E;&#x8005;&#x6307;&#x5357;">1.3 &#x7F16;&#x5199;&#x8D21;&#x732E;&#x8005;&#x6307;&#x5357;</h3>
+<p>&#x7F16;&#x5199; <code>CONTRIBUTING.md</code>&#xFF08;&#x8D21;&#x732E;&#x8005;&#x6307;&#x5357;&#xFF09; &#x6587;&#x6863;&#x6709;&#x52A9;&#x4E8E;&#x8D21;&#x732E;&#x8005;&#x4EEC;&#x5FEB;&#x901F;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x52A0;&#x5165;&#x672C;&#x9879;&#x76EE;&#x7684;&#x8D21;&#x732E;&#x4E4B;&#x4E2D;&#x3002;&#x4E0B;&#x9762;&#x4ECB;&#x7ECD;&#x5982;&#x4F55;&#x7F16;&#x5199;&#x8D21;&#x732E;&#x8005;&#x6307;&#x5357;&#xFF1F;</p>
+<p>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x4F7F;&#x7528;&#x70ED;&#x60C5;&#x53CB;&#x597D;&#x7684;&#x8BED;&#x6C14;&#x5E76;&#x63D0;&#x4F9B;&#x5177;&#x4F53;&#x7684;&#x8D21;&#x732E;&#x5EFA;&#x8BAE;&#x53EF;&#x4EE5;&#x5927;&#x5927;&#x63D0;&#x9AD8;&#x65B0;&#x4EBA;&#x7684;&#x53C2;&#x4E0E;&#x5EA6;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x5728;&#x5F00;&#x5934;&#x8FD9;&#x6837;&#x5F15;&#x5165;&#xFF1A;</p>
+<blockquote>
+<p>&#x9996;&#x5148;&#xFF0C;&#x975E;&#x5E38;&#x611F;&#x8C22;&#x60A8;&#x4E3A; cv actions &#x63D0;&#x4F9B;&#x65B0;&#x9C9C;&#x8840;&#x6DB2;&#x3002;&#x6B63;&#x662F;&#x66F4;&#x591A;&#x50CF;&#x60A8;&#x8FD9;&#x6837;&#x7684;&#x4EBA;&#xFF0C;&#x4F7F;&#x5F97; cv actions &#x5C06;&#x9010;&#x6E10;&#x53D1;&#x5C55;&#x4E3A;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x793E;&#x533A;&#x3002;</p>
+</blockquote>
+<h4 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;1&#x521B;&#x5EFA;-issue-&#x4E0E;-pr-&#x6A21;&#x677F;">1.3.1 &#x51C6;&#x5907;&#x5DE5;&#x4F5C;1&#xFF1A;&#x521B;&#x5EFA; Issue &#x4E0E; PR &#x6A21;&#x677F;</h4>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x6BD4;&#x8F83;&#x5065;&#x5168;&#x7684;&#x793E;&#x533A;&#xFF0C;&#x9700;&#x8981;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x4F18;&#x96C5;&#x7684; Issue templates&#xFF08;&#x89C1;&#x56FE; 5&#xFF09;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x4EE4; Issue &#x7684;&#x53C2;&#x4E0E;&#x8005;&#x6709;&#x7740;&#x4E00;&#x4E2A;&#x7EDF;&#x4E00;&#x800C;&#x6E05;&#x6670;&#x7684;&#x6846;&#x67B6;&#xFF0C;&#x540C;&#x65F6;&#xFF0C;&#x4E5F;&#x65B9;&#x4FBF;&#x5176;&#x4ED6;&#x4EBA;&#x53C2;&#x4E0E; Issue &#x7684;&#x8BA8;&#x8BBA;&#x4E4B;&#x4E2D;&#x3002;Issue templates &#x7684;&#x521B;&#x5EFA;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x4ECE; GitHub &#x4E2D;&#x9700;&#x8981;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x6A21;&#x677F;&#xFF0C;&#x4E4B;&#x540E;&#x70B9;&#x51FB;&#x7EFF;&#x8272;&#x6309;&#x94AE; <code>Propose changes</code> &#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x5373;&#x53EF;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/issue.png" alt><figcaption>&#x56FE;6 &#x6DFB;&#x52A0; Issue templates</figcaption>
+</figure>
+<p>&#x5F53;&#x7136;&#xFF0C;&#x60A8;&#x4E5F;&#x53EF;&#x4EE5;&#x6DFB;&#x52A0;&#x591A;&#x4E2A;&#x6A21;&#x677F;&#x751A;&#x81F3;&#x81EA;&#x5B9A;&#x4E49;&#x6A21;&#x677F;&#xFF08;&#x5177;&#x4F53;&#x7EC6;&#x8282;&#x89C1;<a href="https://help.github.com/cn/articles/creating-a-pull-request-template-for-your-repository" target="_blank" rel="noopener" class="uri">https://help.github.com/cn/articles/creating-a-pull-request-template-for-your-repository</a>&#xFF09;&#x3002;&#x8FD9;&#x4E9B;&#x6A21;&#x677F;&#x4EC5;&#x4EC5;&#x662F;&#x4E00;&#x4E2A;&#x96CF;&#x5F62;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x4E0E;&#x540E;&#x7EED;&#x7684;&#x5DE5;&#x4F5C;&#x8FDB;&#x884C;&#x5339;&#x914D;&#x3002;&#x6240;&#x4EE5;&#xFF0C;&#x521A;&#x5F00;&#x59CB;&#x5148;&#x4E0D;&#x7528;&#x7BA1;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x5148;&#x751F;&#x6210;&#x8FD9;&#x4E9B;&#x6A21;&#x677F;&#x518D;&#x8BF4;&#x3002;&#x5982;&#x679C;&#x9700;&#x8981;&#x521B;&#x5EFA;&#x6709;&#x591A;&#x4E2A;&#x4F5C;&#x8005;&#x7684;<strong>&#x63D0;&#x4EA4;</strong>&#xFF0C;&#x60A8;&#x53EF;&#x4EE5;&#x53C2;&#x8003; <a href="https://help.github.com/cn/articles/creating-a-commit-with-multiple-authors" target="_blank" rel="noopener" class="uri">https://help.github.com/cn/articles/creating-a-commit-with-multiple-authors</a>&#x3002;</p>
+<p>&#x60A8;&#x8FD8;&#x9700;&#x8981;&#x5728; <code>/.github/</code> &#x4E0B;&#x521B;&#x5EFA;&#x6587;&#x6863; <code>PULL_REQUEST_TEMPLATE.md</code> &#x7528;&#x4E8E; Pull request&#xFF08;&#x62C9;&#x53D6;&#x8BF7;&#x6C42;&#xFF0C;PR&#xFF09;&#x7684;&#x751F;&#x6210;&#x3002;&#x56E0;&#x4E3A;&#x7F16;&#x5199;&#x826F;&#x597D;&#x7684; PR &#x8BF4;&#x660E;&#x53EF;&#x4EE5;&#x52A0;&#x901F;&#x5BA1;&#x9605;&#x8005;&#x4E86;&#x89E3;&#x4EE3;&#x7801;&#x7684;&#x9884;&#x671F;&#x7ED3;&#x679C;&#x7684;&#x8FDB;&#x7A0B;&#x3002;&#x5B83;&#x4EEC;&#x4E5F;&#x662F;&#x5E2E;&#x52A9;&#x8DDF;&#x8E2A;&#x5E76;&#x5E94;&#x5BF9;&#x6BCF;&#x6B21;&#x7684; commit&#xFF08;&#x5982;&#x6D4B;&#x8BD5;&#x3001;&#x6DFB;&#x52A0;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#x548C;&#x66F4;&#x65B0;&#x6587;&#x6863;&#xFF09;&#x5E94;&#x6267;&#x884C;&#x7684;&#x5DE5;&#x4F5C;&#x7684;&#x597D;&#x65B9;&#x6CD5;&#x3002;&#x66F4;&#x591A;&#x4F18;&#x79C0;&#x6A21;&#x677F;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/XNoteW/github-issue-templates" target="_blank" rel="noopener" class="uri">https://github.com/XNoteW/github-issue-templates</a>&#x3002;&#x4E0B;&#x9762;&#x4EE5;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E; PR &#x6A21;&#x677F;&#x7684;&#x6837;&#x5F0F;&#xFF1A;</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1"></a>&#x975E;&#x5E38;&#x611F;&#x8C22;&#x60A8;&#x53C2;&#x4E0E;&#x5230; cv actions &#x7684;&#x9879;&#x76EE;&#x4E2D;&#x6765;&#xFF0C;&#x4F46;&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x826F;&#x597D;&#x7684;&#x793E;&#x533A;&#x73AF;&#x5883;&#xFF0C;&#x5728;&#x60A8;&#x63D0;&#x4EA4; PR &#x4E4B;&#x524D;&#xFF0C;&#x8BF7;&#x60A8;&#x786E;&#x4FDD;&#x5DF2;&#x7ECF;&#x6EE1;&#x8DB3;&#x4E0B;&#x5217;&#x8981;&#x6C42;&#xFF1A;</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="st">- [ ] &#x60A8;&#x7684; code &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x8FD8;&#x5B58;&#x5728;&#x9519;&#x8BEF;&#x6216;&#x8005;&#x8B66;&#x544A;&#x4FE1;&#x606F;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="st">- [ ] &#x60A8;&#x6B63;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x672F;&#x8BED;&#xFF08;terminology&#xFF09;&#x662F;&#x5426;&#x662F;&#x793E;&#x533A;&#x7EA6;&#x5B9A;&#x7684;&#x6216;&#x8005;&#x5DF2;&#x7ECF;&#x88AB;&#x516C;&#x8BA4;&#x7684;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="st">- [ ] &#x60A8;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x505A;&#x8FC7;&#x5355;&#x5143;&#x6D4B;&#x8BD5;&#xFF08;unit tests&#xFF09;</span></span></code></pre></div>
+<p>&#x4E00;&#x822C;&#x5730;&#xFF0C;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x4F18;&#x79C0;&#x7684; PR &#x5E94;&#x8BE5;&#x5305;&#x542B;&#x5982;&#x4E0B;&#x95EE;&#x9898;&#xFF1A;</p>
+<ul>
+<li>&#x60A8;&#x505A;&#x4E86;&#x4EC0;&#x4E48;&#x6539;&#x53D8;&#xFF1F;</li>
+<li>&#x60A8;&#x4FEE;&#x590D;&#x4E86;&#x4EC0;&#x4E48;&#x95EE;&#x9898;&#xFF1F;</li>
+<li>&#x4F60;&#x53D1;&#x8D77;&#x7684;&#x662F;&#x4E00;&#x4E2A; bug &#x4FEE;&#x590D;(bug fix) &#x8FD8;&#x662F;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;&#x65B0;&#x7684;&#x529F;&#x80FD;&#xFF1F;&#x5BF9;&#x65E7;&#x7684;&#x7248;&#x672C;&#x662F;&#x5426;&#x6709;&#x91CD;&#x5927;&#x5F71;&#x54CD;&#xFF1F;&#x5BF9;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#x7684;&#x51FD;&#x6570;&#x6216;&#x8005;&#x6A21;&#x5757;&#x662F;&#x5426;&#x8FDB;&#x884C;&#x91CD;&#x6784;&#xFF1F;</li>
+<li>&#x60A8;&#x662F;&#x5982;&#x4F55;&#x9A8C;&#x8BC1;&#x5B83;&#x7684;&#xFF1F;</li>
+</ul>
+<p>&#x66F4;&#x591A;&#x5173;&#x4E8E; PR &#x7684;&#x7EC6;&#x8282;&#x53EF;&#x53C2;&#x8003;&#xFF1A;<a href="https://github.com/embeddedartistry/templates/blob/master/oss_docs/PULL_REQUEST_TEMPLATE.md" target="_blank" rel="noopener" class="uri">https://github.com/embeddedartistry/templates/blob/master/oss_docs/PULL_REQUEST_TEMPLATE.md</a>&#x3002;</p>
+<h4 id="&#x51C6;&#x5907;&#x5DE5;&#x4F5C;2&#x7F16;&#x5199;&#x884C;&#x4E3A;&#x51C6;&#x5219;">1.3.2 &#x51C6;&#x5907;&#x5DE5;&#x4F5C;2&#xFF1A;&#x7F16;&#x5199;&#x884C;&#x4E3A;&#x51C6;&#x5219;</h4>
+<p>&#x4E00;&#x4E2A;&#x793E;&#x533A;&#x60F3;&#x8981;&#x53EF;&#x6301;&#x7EED;&#x5730;&#x4E14;&#x5065;&#x5EB7;&#x5730;&#x53D1;&#x5C55;&#x9700;&#x8981;&#x62E5;&#x6709;&#x4E00;&#x4EFD;&#x7EA6;&#x5B9A;&#x7684;&#x884C;&#x4E3A;&#x51C6;&#x5219;&#xFF1A;<code>CODE_OF_CONDUCT.md</code>&#x3002;&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;<strong>&#x884C;&#x4E3A;&#x51C6;&#x5219;</strong>&#x5373;&#x662F;&#x53C2;&#x4E0E;&#x793E;&#x533A;&#x65F6;&#x7684;&#x4E00;&#x4E9B;&#x793C;&#x4EEA;&#x3001;&#x8BF4;&#x8BDD;&#x65B9;&#x5F0F;&#x3001;&#x884C;&#x4E3A;&#x7B49;&#xFF0C;&#x5B83;&#x5E2E;&#x52A9;&#x793E;&#x533A;&#x5F62;&#x6210;&#x4E00;&#x79CD;&#x53CB;&#x597D;&#x7684;&#x6C1B;&#x56F4;&#xFF0C;&#x4E14;&#x5728;&#x67D0;&#x79CD;&#x7A0B;&#x5EA6;&#x4E0A;&#x5B83;&#x4E5F;&#x662F;&#x5C55;&#x793A;&#x9879;&#x76EE;&#x5BF9;&#x4E8E;&#x8D21;&#x732E;&#x8005;&#x7684;&#x53CB;&#x597D;&#x7A0B;&#x5EA6;&#x3002;</p>
+<p>&#x5F53;&#x524D;&#x5DF2;&#x7ECF;&#x4E0D;&#x9700;&#x8981;&#x6211;&#x4EEC;&#x81EA;&#x5DF1;&#x521B;&#x5EFA;&#x884C;&#x4E3A;&#x51C6;&#x5219;&#xFF0C;&#x5728;<a href="https://www.contributor-covenant.org/" target="_blank" rel="noopener">&#x8D21;&#x732E;&#x8005;&#x516C;&#x7EA6;</a>(<a href="https://www.contributor-covenant.org/" target="_blank" rel="noopener" class="uri">https://www.contributor-covenant.org/</a>)&#x4E4B;&#x4E2D;&#x5DF2;&#x7ECF;&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4EFD;&#x884C;&#x4E4B;&#x6709;&#x6548;&#x7684;&#x884C;&#x4E3A;&#x89C4;&#x8303;&#xFF0C;&#x5DF2;&#x7ECF;&#x88AB;&#x7528;&#x5728;&#x5305;&#x62EC; Kubernetes&#xFF0C;Rails&#xFF0C;&#x4EE5;&#x53CA; Swift&#x7B49;<a href="https://www.contributor-covenant.org/adopters" target="_blank" rel="noopener">&#x8D85;&#x8FC7; 4000 &#x4E2A;&#x5F00;&#x6E90;&#x9879;&#x76EE;</a>(<a href="https://www.contributor-covenant.org/adopters" target="_blank" rel="noopener" class="uri">https://www.contributor-covenant.org/adopters</a>)&#x4E4B;&#x4E2D;&#x3002;&#x53C2;&#x8003;&#x56FE;5 &#x70B9;&#x51FB; <code>Add</code> Code of conduct&#xFF0C;&#x4FBF;&#x4F1A;&#x5F39;&#x51FA;&#x56FE;7 &#x7684;&#x7ED3;&#x679C;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/CCC.png" alt><figcaption>&#x56FE;7 &#x6DFB;&#x52A0;&#x884C;&#x4E3A;&#x51C6;&#x5219;</figcaption>
+</figure>
+<p>&#x9009;&#x62E9;&#x8D21;&#x732E;&#x8005;&#x516C;&#x7EA6;&#xFF08;Contributor Covenant&#xFF09;&#x5E76;&#x5728;&#x53F3;&#x4FA7;&#x586B;&#x5199;&#x7535;&#x5B50;&#x90AE;&#x7BB1;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x8FDD;&#x53CD;&#x516C;&#x7EA6;&#x7684;&#x884C;&#x4E3A;&#x548C;&#x53CD;&#x9988;&#x3002;&#x6700;&#x540E;&#xFF0C;&#x63D0;&#x4EA4;&#x4FEE;&#x6539;&#x5373;&#x53EF;&#x3002;</p>
+<h4 id="&#x8D21;&#x732E;&#x6307;&#x5357;&#x7F16;&#x5199;&#x7EC6;&#x5219;">1.3.3 &#x8D21;&#x732E;&#x6307;&#x5357;&#x7F16;&#x5199;&#x7EC6;&#x5219;</h4>
+<p>&#x8003;&#x8651;&#x5230;&#x9879;&#x76EE;&#x7684;&#x53EF;&#x8BFB;&#x6027;&#xFF0C;&#x9700;&#x8981;&#x8BBE;&#x8BA1;&#x4E00;&#x4E9B;&#x8D21;&#x732E;&#x6307;&#x5357;&#x7F16;&#x5199;&#x7684;&#x7EC6;&#x5219;&#x3002;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x83B7;&#x5F97;&#x66F4;&#x591A;&#x6709;&#x5173;&#x7F16;&#x5199;&#x8D21;&#x732E;&#x6307;&#x5357;&#x7684;&#x65B9;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x67E5;&#x9605; <span class="citation" data-cites="nayafia">@nayafia</span> &#x7684; <a href="https://github.com/nayafia/contributing-template/blob/master/CONTRIBUTING-template.md" target="_blank" rel="noopener">&#x8D21;&#x732E;&#x6307;&#x5357;&#x6A21;&#x677F;</a> &#x6216;&#x8005; <span class="citation" data-cites="mozilla">@mozilla</span> &#x7684; <a href="https://mozillascience.github.io/working-open-workshop/contributing/" target="_blank" rel="noopener">&#x201C;&#x5982;&#x4F55;&#x6784;&#x5EFA; CONTRIBUTION.md&#x201D;</a>&#x3002;&#x4E0B;&#x9762;&#x7ED9;&#x51FA; cv actions &#x7684;&#x8D21;&#x732E;&#x6307;&#x5357;&#xFF1A;</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1"></a><span class="fu"># &#x8D21;&#x732E;&#x6307;&#x5357;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a></span>
+<span id="cb4-3"><a href="#cb4-3"></a>&#x975E;&#x5E38;&#x611F;&#x8C22;&#x60A8;&#x4E50;&#x610F;&#x4E3A; cv actions &#x63D0;&#x4F9B;&#x65B0;&#x9C9C;&#x8840;&#x6DB2;&#x3002;&#x6B63;&#x662F;&#x66F4;&#x591A;&#x50CF;&#x60A8;&#x8FD9;&#x6837;&#x7684;&#x4EBA;&#xFF0C;&#x4F7F;&#x5F97; cv actions &#x5C06;&#x9010;&#x6E10;&#x53D1;&#x5C55;&#x4E3A;&#x4E00;&#x4E2A;&#x5F3A;&#x5927;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x793E;&#x533A;&#x3002;</span>
+<span id="cb4-4"><a href="#cb4-4"></a></span>
+<span id="cb4-5"><a href="#cb4-5"></a>&#x4E3A;&#x4E86;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x826F;&#x597D;&#x7684;&#x793E;&#x533A;&#x73AF;&#x5883;&#xFF0C;&#x8BF7;&#x60A8;&#x9075;&#x5B88;&#x6211;&#x4EEC;&#x793E;&#x533A;&#x7684;&#x300A;<span class="ot">[&#x884C;&#x4E3A;&#x51C6;&#x5219;](CODE_OF_CONDUCT.md)</span>&#x300B;&#x3002;&#x5982;&#x679C;&#x60A8;&#x60F3;&#x8981;&#x53D1;&#x8D77;&#x4E00;&#x4E2A; Bug report &#x6216;&#x8005; Feature request&#xFF0C;&#x8BF7;&#x60A8;&#x9075;&#x5FAA; Issue &#x7684;&#x6A21;&#x677F;&#x8FDB;&#x884C;&#x8D21;&#x732E;&#x3002;&#x540C;&#x65F6;&#x4E5F;&#x6B22;&#x8FCE;&#x60A8;&#x8D21;&#x732E;&#x65B0;&#x7684;&#x4E14;&#x5B9E;&#x7528;&#x7684; Issue &#x4E0E; Pull request templates&#x3002;</span>
+<span id="cb4-6"><a href="#cb4-6"></a></span>
+<span id="cb4-7"><a href="#cb4-7"></a>&#x8BF7;&#x60A8;&#x4ED4;&#x7EC6;&#x9605;&#x8BFB;&#x8FD9;&#x4EFD;&#x6307;&#x5357;&#xFF0C;&#x56E0;&#x4E3A;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x8FD9;&#x6837;&#x505A;&#x4E86;&#xFF0C;&#x65E2;&#x53EF;&#x4EE5;&#x8282;&#x7701;&#x60A8;&#x7684;&#x5B9D;&#x8D35;&#x65F6;&#x95F4;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x5BF9;&#x5176;&#x4ED6;&#x8D21;&#x732E;&#x8005;&#x6216;&#x8005;&#x5BA1;&#x9605;&#x8005;&#x4EEC;&#x7684;&#x6781;&#x5927;&#x7684;&#x5C0A;&#x91CD;&#x3002;</span>
+<span id="cb4-8"><a href="#cb4-8"></a></span>
+<span id="cb4-9"><a href="#cb4-9"></a>&#x672C;&#x9879;&#x76EE;&#x7684;**&#x76EE;&#x6807;**&#x662F;**&#x6253;&#x9020;&#x4E00;&#x4E2A;&#x5065;&#x5EB7;&#x4E14;&#x53EF;&#x6301;&#x7EED;&#x53D1;&#x5C55;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x793E;&#x533A;&#x3002;**</span>
+<span id="cb4-10"><a href="#cb4-10"></a></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="fu">## &#x8D21;&#x732E;&#x7684;&#x7C7B;&#x578B;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a></span>
+<span id="cb4-13"><a href="#cb4-13"></a>&#x672C;&#x9879;&#x76EE;&#x4E0D;&#x4EC5;&#x4EC5;&#x6B22;&#x8FCE;&#x60A8;&#x8D21;&#x732E;&#x4EE3;&#x7801;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x6B22;&#x8FCE;&#x60A8;&#x8D21;&#x732E;&#x6587;&#x6863;&#xFF08;&#x8BF7;&#x5728; <span class="bn">`/docs/`</span> &#x4E2D;&#x8FDB;&#x884C;&#xFF09;&#xFF0C;&#x6559;&#x7A0B;&#x6216;&#x8005;&#x672C;&#x9879;&#x76EE;&#x7684;&#x4F7F;&#x7528;&#x624B;&#x518C;&#x7B49;&#x5185;&#x5BB9;&#x3002;</span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="fu">## &#x8D21;&#x732E;&#x7684;&#x5FC5;&#x8981;&#x6761;&#x4EF6;</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="st">1. &#x5982;&#x679C;&#x60A8;&#x4E0D;&#x4E86;&#x89E3;&#x5982;&#x4F55;&#x5BF9;&#x9879;&#x76EE;&#x8FDB;&#x8D21;&#x732E;&#xFF0C;&#x8BF7;&#x60A8;&#x53C2;&#x8003; </span><span class="ot">[&#x5982;&#x4F55;&#x4E3A;&#x5F00;&#x6E90;&#x505A;&#x8D21;&#x732E;](https://opensource.guide/zh-cn/how-to-contribute/)</span><span class="st">&#x3002;</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="st">2. &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x9879;&#x76EE;&#x7684;&#x7BA1;&#x7406;&#xFF0C;&#x8BF7;&#x60A8;&#x4F7F;&#x7528; Git Flow &#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;&#x5F53;&#x60A8;&#x5C06;&#x9879;&#x76EE;&#x514B;&#x9686;&#x5230;&#x60A8;&#x7684;&#x672C;&#x5730;&#x7535;&#x8111;&#x540E;&#xFF0C;&#x8BF7;&#x60A8;&#x8FD0;&#x884C;&#xFF1A;</span><span class="bn">`git flow init`</span><span class="st"> &#x5E76;&#x968F;&#x4E4B;&#x5207;&#x6362;&#x5230; develop&#x3002;&#x5177;&#x4F53;&#x662F;&#x4F7F;&#x7528;&#x7EC6;&#x8282;&#x8BF7; &#x1F4D6; </span><span class="ot">&lt;https://xinetzone.github.io/projects/&gt;</span><span class="st">&#x3002;</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="st">3. &#x672C;&#x9879;&#x76EE;&#x6682;&#x5B9A;&#x4EE5; Python &#x4F5C;&#x4E3A;&#x4EE3;&#x7801;&#x7684;&#x5F00;&#x53D1;&#x8BED;&#x8A00;&#xFF0C;&#x800C;&#x6587;&#x6863;&#x7684;&#x7F16;&#x5199;&#x8BF7;&#x4F7F;&#x7528; Markdown &#x8FDB;&#x884C;&#x5DE5;&#x4F5C;&#x3002;</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a><span class="st">4. &#x672C;&#x9879;&#x76EE;&#x5728; GitHub &#x4E0A;&#x7EF4;&#x62A4;&#x7684; master &#x5206;&#x652F;&#x4F5C;&#x4E3A;&#x9884;&#x53D1;&#x5E03;&#x7248;&#x672C;&#xFF0C;&#x800C; develop &#x5206;&#x652F;&#x4F5C;&#x4E3A;&#x5F00;&#x53D1;&#x7248;&#x672C;&#x3002;&#x5176;&#x4ED6;&#x529F;&#x80FD;&#x7248;&#x672C;&#x8BF7;&#x4EE5; git flow &#x7684;&#x89C4;&#x5219;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="st">5. &#x60A8;&#x8D21;&#x732E;&#x7684; Python &#x4EE3;&#x7801;&#x9700;&#x8981;&#x652F;&#x6301; pep8&#xFF0C;&#x6570;&#x5B66;&#x516C;&#x5F0F;&#x6700;&#x597D;&#x4F7F;&#x7528; markdown &#x7684;&#x6807;&#x51C6;&#x8BED;&#x6CD5;&#xFF0C;&#x6BD4;&#x5982; </span><span class="bn">`$x^2=1$`</span><span class="st">&#x7B49;&#x3002;</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="fu">## Issue &#x4E0E; Pull request &#x7684;&#x884C;&#x4E3A;&#x51C6;&#x5219;</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a></span>
+<span id="cb4-25"><a href="#cb4-25"></a>&#x8003;&#x8651;&#x5230;&#x53EF;&#x8BFB;&#x6027;&#x4E0E;&#x53EF;&#x7406;&#x89E3;&#x6027;&#xFF0C;&#x5728;&#x60A8;&#x521B;&#x5EFA; Issue &#x6216;&#x8005; Pull request&#xFF08;&#x7B80;&#x5199;&#x4E3A; PR&#xFF09; &#x65F6;&#xFF0C;&#x8BF7;&#x9075;&#x5FAA;&#x5982;&#x4E0B;&#x7EA6;&#x5B9A;&#xFF1A;</span>
+<span id="cb4-26"><a href="#cb4-26"></a></span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="st">1. **&#x8BF7;&#x7ED9;&#x51FA;&#x60A8;&#x7684; issue &#x6216;&#x8005; PR &#x7684; context**&#xFF1A;&#x5373;&#x7ED9;&#x51FA;&#x4E0A;&#x4E0B;&#x6587;&#x8BED;&#x5883;&#x3002;&#x6BD4;&#x5982;&#x5F53;&#x60A8;&#x4F60;&#x8FD0;&#x884C;&#x7A0B;&#x5E8F;&#x65F6;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x8BF7;&#x89E3;&#x91CA;&#x4F60;&#x662F;&#x5982;&#x4F55;&#x64CD;&#x4F5C;&#x7684;&#xFF0C;&#x5E76;&#x63CF;&#x8FF0;&#x8BE5;&#x9519;&#x8BEF;&#x73B0;&#x8C61;&#x662F;&#x5426;&#x5177;&#x6709;&#x518D;&#x73B0;&#x6027;&#xFF1B;&#x5F53;&#x60A8;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x65B0;&#x7684;idea&#xFF0C;&#x8BF7;&#x60A8;&#x89E3;&#x91CA;&#x8BE5; idea &#x60A8;&#x662F;&#x5982;&#x4F55;&#x60F3;&#x5230;&#x7684;&#xFF0C;&#x5E76;&#x4E14;&#x8BF4;&#x660E;&#x60A8;&#x7684; idea &#x7684;&#x9002;&#x7528;&#x8303;&#x56F4;&#xFF0C;&#x662F;&#x5426;&#x53EF;&#x4EE5;&#x5C06;&#x60A8;&#x7684; idea &#x8FDB;&#x884C;&#x63A8;&#x5E7F;&#x6216;&#x8005;&#x62D3;&#x5C55;&#x3002;</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="st">2. **&#x60A8;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5B8C;&#x6210;&#x51C6;&#x5907;&#x5DE5;&#x4F5C;**&#xFF1A;&#x8BF7;&#x786E;&#x8BA4;&#x60A8;&#x662F;&#x5426;&#x9605;&#x8BFB;&#x4E86;&#x9879;&#x76EE;&#x7684; README&#x3001;&#x6587;&#x6863;&#x3001;&#x95EE;&#x9898;&#xFF08;&#x5F00;&#x653E;&#x7684;&#x548C;&#x5173;&#x95ED;&#x7684;&#xFF09;&#xFF0C;&#x68C0;&#x67E5;&#x60A8;&#x7684; issue &#x6216;&#x8005; PR &#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x6709;&#x4EBA;&#x505A;&#x8FC7;&#x6216;&#x8005;&#x6B63;&#x5728;&#x505A;&#xFF0C;&#x907F;&#x514D;&#x63D0;&#x4EA4;&#x91CD;&#x590D;&#x7684;&#x8BAE;&#x9898;&#x6216;&#x8005;&#x8BF7;&#x6C42;&#x3002;</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="st">3. &#x8BF7;&#x60A8;**&#x4FDD;&#x6301;&#x8BF7;&#x6C42;&#x5185;&#x5BB9;&#x7684;&#x77ED;&#x5C0F;&#x800C;&#x76F4;&#x63A5;**&#xFF1A;&#x6BCF;&#x4E2A;&#x4EBA;&#x7684;&#x65F6;&#x95F4;&#x548C;&#x7CBE;&#x529B;&#x90FD;&#x662F;&#x6709;&#x9650;&#x7684;&#xFF0C;&#x77ED;&#x5C0F;&#x800C;&#x76F4;&#x63A5;&#x7684;&#x8BF7;&#x6C42;&#x5BF9;&#x5927;&#x5BB6;&#x90FD;&#x6709;&#x76CA;&#x5904;&#x3002;</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="st">4. **&#x8BF7;&#x4FDD;&#x6301;&#x60A8;&#x7684;&#x4F18;&#x96C5;**&#xFF1A;&#x672C;&#x793E;&#x533A;&#x7981;&#x6B62;&#x53D1;&#x5E03;&#x4E0D;&#x826F;&#x4FE1;&#x606F;&#xFF0C;&#x6CE8;&#x610F;&#x7528;&#x8BED;&#x6587;&#x660E;&#x800C;&#x4F18;&#x96C5;&#xFF0C;&#x675C;&#x7EDD;&#x5404;&#x79CD;&#x8FB1;&#x9A82;&#x548C;&#x6253;&#x53E3;&#x6C34;&#x4ED7;&#x7684;&#x884C;&#x4E3A;&#x3002;</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a></span>
+<span id="cb4-32"><a href="#cb4-32"></a><span class="fu">## &#x83B7;&#x5F97;&#x8054;&#x7CFB;</span></span>
+<span id="cb4-33"><a href="#cb4-33"></a></span>
+<span id="cb4-34"><a href="#cb4-34"></a><span class="st">- &#x60A8;&#x53EF;&#x4EE5;&#x5728; Gitter @</span><span class="ot">[cv-actions](https://gitter.im/cv-actions/community)</span><span class="st"> &#x4E0A;&#x8BA8;&#x8BBA; Issue</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a><span class="st">- &#x5982;&#x679C;&#x6709;&#x7591;&#x95EE;&#xFF0C;&#x8BF7;&#x60A8; &#x2709;&#xFE0F; xinzone@outlook.com</span></span>
+<span id="cb4-36"><a href="#cb4-36"></a></span>
+<span id="cb4-37"><a href="#cb4-37"></a><span class="fu">## TODOS</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a></span>
+<span id="cb4-39"><a href="#cb4-39"></a><span class="st">- [ ] &#x5229;&#x7528; </span><span class="ot">[pre-commit](https://pre-commit.com/)</span><span class="st"> &#x81EA;&#x52A8;&#x90E8;&#x7F72;&#x4EE3;&#x7801;&#x7684;&#x683C;&#x5F0F;&#xFF0C;&#x4F7F;&#x5176;&#x81EA;&#x52A8;&#x5316;&#x652F;&#x6301; pep8 &#x7B49;&#x683C;&#x5F0F;&#x3002;</span></span></code></pre></div>
+<p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4FBF;&#x5728; GitHub &#x4E0A;&#x5B8C;&#x6210;&#x4E86;&#x9879;&#x76EE;&#x7684;&#x6784;&#x5EFA;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h2 id="&#x4F7F;&#x7528;-git-submodule-&#x7BA1;&#x7406;&#x5B50;&#x9879;&#x76EE;">2 &#x4F7F;&#x7528; git submodule &#x7BA1;&#x7406;&#x5B50;&#x9879;&#x76EE;</h2>
+<p>&#x53C2;&#x8003;&#x8D44;&#x6599;&#xFF1A;<a href="https://git-scm.com/book/en/v2/Git-Tools-Submodules" target="_blank" rel="noopener" class="uri">https://git-scm.com/book/en/v2/Git-Tools-Submodules</a>&#x3002;</p>
+<p>&#x60C5;&#x666F;&#xFF1A;&#x5728;&#x60A8;&#x6B63;&#x5728;&#x7EF4;&#x62A4;&#x7684;&#x9879;&#x76EE;&#xFF08;&#x53EF;&#x8BB0;&#x4E3A; A&#xFF09;&#x4E2D;&#x5B58;&#x5728;&#x4E00;&#x4E9B;&#x5B50;&#x9879;&#x76EE;&#x6216;&#x8005;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#xFF08;&#x53EF;&#x8BB0;&#x4E3A; B&#xFF09;&#x3002;&#x60A8;&#x4E0D;&#x60F3;&#x5728; A &#x4E2D;&#x76F4;&#x63A5;&#x7EF4;&#x62A4; B&#xFF0C;&#x5E0C;&#x671B; B &#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x5355;&#x72EC;&#x7684;&#x9879;&#x76EE;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x8FD9;&#x79CD;&#x60C5;&#x51B5;&#x4E0B;&#x4FBF;&#x9700;&#x8981;&#x501F;&#x52A9; Git &#x5B50;&#x6A21;&#x5757;&#x5DE5;&#x5177;&#x4E86;&#x3002;Git &#x5B50;&#x6A21;&#x5757;&#x5DE5;&#x5177;&#x5C06; B &#x4F5C;&#x4E3A; A &#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x4F7F;&#x7528; <code>git submodule</code> &#x6765;&#x5B9E;&#x73B0;&#x3002;&#x4E0B;&#x9762;&#x4EE5;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x3002;</p>
+<h3 id="&#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5757;">2.1 &#x5F00;&#x59CB;&#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5757;</h3>
+<ul>
+<li>&#x524D;&#x63D0;&#xFF1A;&#x5728; Github &#x4E0A;&#x5355;&#x72EC;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x72EC;&#x7ACB;&#x7684;&#x9879;&#x76EE;<a href="https://xinetzone.github.io/image/">xinetzone/image</a>(<a href="https://xinetzone.github.io/image/" class="uri">https://xinetzone.github.io/image/</a>)&#xFF0C;&#x8BE5;&#x9879;&#x76EE;&#x662F;&#x4E00;&#x4E2A;&#x6570;&#x5B57;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x7684;&#x5DE5;&#x5177;&#x5305;&#x3002;</li>
+<li>&#x76EE;&#x6807;&#xFF1A;&#x5728; <a href="https://xinetzone.github.io/cv-actions/">cv-actions</a> &#x9879;&#x76EE;&#x4E2D;&#x6DFB;&#x52A0;&#x5B50;&#x9879;&#x76EE; <a href="https://xinetzone.github.io/image/">image</a>&#x3002;</li>
+</ul>
+<p>&#x7B2C; 1 &#x6B65;&#xFF1A;&#x514B;&#x9686; <a href="https://xinetzone.github.io/cv-actions/">cv-actions</a> &#x5230;&#x4E2A;&#x4EBA;&#x7535;&#x8111;&#x3002;&#x5373;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#xFF1A;<code>git clone https://github.com/xinetzone/image.git</code>&#x3002; &#x7B2C; 2 &#x6B65;&#xFF1A;git flow &#x521D;&#x59CB;&#x5316;&#xFF0C;&#x5373;&#x5728;&#x7EC8;&#x7AEF;&#x8F93;&#x5165;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#xFF1A;</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a>$ <span class="bu">cd</span> cv-actions</span>
+<span id="cb5-2"><a href="#cb5-2"></a>$ <span class="fu">git</span> flow init</span></code></pre></div>
+<p>&#x7B2C; 3 &#x6B65;&#xFF1A;&#x4F7F;&#x7528; git flow &#x521B;&#x5EFA;&#x5E76;&#x5207;&#x6362;&#x5230;&#x65B0;&#x7684;&#x5206;&#x652F; <code>feature/image</code>&#xFF0C;&#x5373;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#xFF1A;</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a>$ <span class="fu">git</span> flow feature start image</span></code></pre></div>
+<p>&#x7B2C; 4 &#x6B65;&#xFF1A;&#x4F7F;&#x7528; <code>git submodule</code> &#x6DFB;&#x52A0;&#x5B50;&#x9879;&#x76EE; cv-actions &#x5230;&#x76EE;&#x5F55; <code>app/</code> &#x4E4B;&#x4E0B;&#xFF0C;&#x5373;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x8F93;&#x5165;&#xFF1A;</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a>$ <span class="bu">cd</span> app/</span>
+<span id="cb7-2"><a href="#cb7-2"></a>$ <span class="fu">git</span> submodule add https://github.com/xinetzone/image</span></code></pre></div>
+<p>&#x5176;&#x4E2D; <code>https://github.com/xinetzone/image</code> &#x662F;&#x5B50;&#x9879;&#x76EE; image &#x7684;&#x7F51;&#x5740;&#x3002;</p>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x8FD0;&#x884C; <code>git status</code> &#x67E5;&#x770B;&#x9879;&#x76EE; cv-actions &#x7684;&#x72B6;&#x6001;&#xFF0C;&#x4FBF;&#x770B;&#x5230;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/submodule.png" alt><figcaption>&#x56FE;8 git &#x514B;&#x9686;&#x5B50;&#x6A21;&#x5757;&#x540E;&#x7684;&#x72B6;&#x6001;</figcaption>
+</figure>
+<p>&#x4ECE;&#x56FE;8 &#x53EF;&#x4EE5;&#x770B;&#x5230;&#x6B64;&#x65F6;&#x5728; <code>app/</code> &#x4E0B;&#x65B0;&#x589E;&#x76EE;&#x5F55; <code>image</code>&#xFF0C;&#x4E14;&#x5728;&#x6839;&#x76EE;&#x5F55;&#x65B0;&#x589E;&#x6587;&#x4EF6; <code>.gitmodules</code>&#x3002;</p>
+<p>&#x5176;&#x4E2D; <code>.gitmodules</code> &#x6587;&#x4EF6;&#x8BB0;&#x5F55;&#x4E86;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x7684;&#x9879;&#x76EE; image &#x7684; URL &#x4E0E;&#x5DF2;&#x7ECF;&#x62C9;&#x53D6;&#x7684;&#x672C;&#x5730;&#x76EE;&#x5F55;&#x4E4B;&#x95F4;&#x7684;&#x6620;&#x5C04;&#xFF1A;</p>
+<pre class=".gitmodules"><code>[submodule &quot;app/image&quot;]
+  path = app/image
+  url = https://github.com/xinetzone/image</code></pre>
+<p>&#x5982;&#x679C;&#x60A8;&#x6709;&#x591A;&#x4E2A;&#x5B50;&#x6A21;&#x5757;&#x9700;&#x8981;&#x88AB;&#x7BA1;&#x7406;&#xFF0C;<code>.gitmodules</code> &#x6587;&#x4EF6;&#x4E2D;&#x5C31;&#x4F1A;&#x6709;&#x591A;&#x6761;&#x8BB0;&#x5F55;&#x3002;&#x867D;&#x7136; <code>image/</code> &#x662F; cv-actions &#x7684;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x7684;&#x4E00;&#x4E2A;&#x5B50;&#x76EE;&#x5F55;&#xFF0C;&#x4F46;&#x662F;&#xFF0C;git &#x5E76;&#x4E0D;&#x4F1A;&#x5C06;&#x5176;&#x89C6;&#x4F5C;&#x666E;&#x901A;&#x6587;&#x4EF6;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#xFF0C;&#x800C;&#x662F;&#x5C06;&#x5176;&#x4F5C;&#x4E3A;&#x4E00;&#x4E2A;&#x6574;&#x4F53;&#x5F53;&#x4F5C;&#x5B50;&#x6A21;&#x5757;&#x4E2D;&#x7684;&#x67D0;&#x4E2A;&#x5177;&#x4F53;&#x7684;&#x63D0;&#x4EA4;&#x8FDB;&#x884C;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x7B2C; 5 &#x6B65;&#xFF1A;&#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x3002;&#x4E3A;&#x4E86;&#x8BA9;&#x5B50;&#x6A21;&#x5757; image &#x52A0;&#x5165;&#x5230; git &#x7684;&#x5386;&#x53F2;&#xFF08;commit&#xFF09;&#x4E4B;&#x4E2D;&#xFF0C;&#x60A8;&#x9700;&#x8981;&#x5C06;&#x5176;&#x63D0;&#x4EA4;&#xFF1A;</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1"></a>$ <span class="bu">cd</span> .. <span class="co"># &#x56DE;&#x5230;&#x6839;&#x76EE;&#x5F55;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a>$ <span class="fu">git</span> commit -am <span class="st">&apos;&#x6DFB;&#x52A0;&#x5B50;&#x6A21;&#x5757; image&apos;</span></span></code></pre></div>
+<p>&#x5176;&#x4E2D; <code>-am</code> &#x662F; <code>-a -m</code> &#x7684;&#x7EC4;&#x5408;&#x3002;</p>
+<p>&#x7B2C; 6 &#x6B65;&#xFF1A;&#x63A8;&#x9001;&#x9879;&#x76EE;&#x5230;&#x8FDC;&#x7AEF;&#x5206;&#x652F; feature/image&#x3002;</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1"></a>$ <span class="fu">git</span> push origin feature/image</span></code></pre></div>
+<h3 id="&#x514B;&#x9686;&#x542B;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;">2.2 &#x514B;&#x9686;&#x542B;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;</h3>
+<p>&#x514B;&#x9686;&#x542B;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;&#x4E00;&#x822C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ul>
+<li>&#x65B9;&#x6CD5;1&#xFF1A;<code>git clone URL</code></li>
+<li>&#x65B9;&#x6CD5;2&#xFF1A;<code>git clone --recursive URL</code></li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x5148;&#x8BA8;&#x8BBA;&#x5982;&#x4F55;&#x4F7F;&#x7528;&#x65B9;&#x6CD5;1 &#x514B;&#x9686;&#x542B;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x9996;&#x5148;&#x4F7F;&#x7528;&#x8BED;&#x6CD5; <code>git clone -b &#x5206;&#x652F;&#x540D; URL</code> &#x514B;&#x9686;&#x9879;&#x76EE;&#x7684;&#x6307;&#x5B9A;&#x5206;&#x652F;&#x3002;&#x5728;&#x7EC8;&#x7AEF;&#x8FD0;&#x884C;&#xFF1A;</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1"></a>$ <span class="fu">git</span> clone -b feature/image https://github.com/xinetzone/cv-actions</span>
+<span id="cb11-2"><a href="#cb11-2"></a>$ <span class="bu">cd</span> cv-actions/</span></code></pre></div>
+<p>&#x6B64;&#x65F6;&#xFF0C;&#x60A8;&#x8FDB;&#x5165; <code>app/image</code> &#x4F1A;&#x53D1;&#x73B0;&#x5176;&#x662F;&#x4E00;&#x4E2A;&#x7A7A;&#x76EE;&#x5F55;&#xFF0C;&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x542B;&#x6709;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x9879;&#x76EE;&#x9700;&#x8981;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;&#x521D;&#x59CB;&#x5316;&#x9700;&#x8981;&#x4E24;&#x6B65;&#xFF0C;&#x5177;&#x4F53;&#x64CD;&#x4F5C;&#x662F;&#x5728; <code>app/image</code> &#x4E0B;&#x9762;&#x8FD0;&#x884C;&#xFF1A;</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1"></a>$ <span class="fu">git</span> submodule init</span>
+<span id="cb12-2"><a href="#cb12-2"></a>$ <span class="fu">git</span> submodule update</span></code></pre></div>
+<p>&#x5176;&#x4E2D; <code>git submodule init</code> &#x7528;&#x4E8E;&#x521D;&#x59CB;&#x5316;&#x672C;&#x5730;&#x914D;&#x7F6E;&#xFF0C;&#x800C; <code>git submodule update</code> &#x7528;&#x4E8E;&#x4ECE;&#x9879;&#x76EE; image &#x4E2D;&#x6293;&#x53D6;&#x6240;&#x6709;&#x6570;&#x636E;&#x5E76;&#x68C0;&#x51FA;&#xFF08;checked out&#xFF09;&#x7236;&#x9879;&#x76EE;&#x4E2D;&#x5217;&#x51FA;&#x7684;&#x5408;&#x9002;&#x7684;&#x63D0;&#x4EA4;&#x3002;&#x4F7F;&#x7528; <code>git status</code> &#x67E5;&#x770B;&#x5F53;&#x524D;&#x72B6;&#x6001;&#xFF1A;</p>
+<figure>
+<img src="/zh-CN/e6d6f9e7/9.png" alt><figcaption>&#x56FE;9 &#x67E5;&#x770B; git submodule update &#x540E;&#x7684;&#x72B6;&#x6001;</figcaption>
+</figure>
+<p>&#x4ECE;&#x56FE;9 &#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x6B64;&#x65F6; image &#x4E0E;&#x5176;&#x4E0A;&#x6E38; <code>origin/feature/image</code> &#x5DF2;&#x7ECF;&#x540C;&#x6B65;&#x4E86;&#x3002;</p>
+<p>&#x5BF9;&#x4E8E;&#x65B9;&#x6CD5;2&#xFF0C;&#x4EC5;&#x4EC5;&#x8FD0;&#x884C;&#x5982;&#x4E0B;&#x547D;&#x4EE4;&#x5373;&#x53EF;&#x8FBE;&#x5230;&#x4E0A;&#x8FF0;&#x7684;&#x540C;&#x6837;&#x6548;&#x679C;&#xFF1A;</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1"></a>$ <span class="fu">git</span> clone --recursive -b feature/image https://github.com/xinetzone/cv-actions</span></code></pre></div>
+<h3 id="&#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5757;">2.3 &#x4F7F;&#x7528;&#x5B50;&#x6A21;&#x5757;</h3>
+<p>&#x5982;&#x679C;&#x5B50;&#x6A21;&#x5757;&#x7684;&#x4E0A;&#x6E38;&#x6709;&#x7684;&#x65B0;&#x7684;&#x63D0;&#x4EA4;&#xFF08;commit&#xFF09;&#xFF0C;&#x60A8;&#x60F3;&#x8981;&#x83B7;&#x53D6;&#x66F4;&#x65B0;&#xFF0C;&#x6709;&#x4E24;&#x79CD;&#x65B9;&#x6CD5;&#xFF1A;</p>
+<ol type="1">
+<li>&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x5B50;&#x6A21;&#x5757;&#x6240;&#x5728;&#x76EE;&#x5F55; <code>app/image</code> &#x901A;&#x8FC7;&#x8FD0;&#x884C; <code>git fetch</code> &#x4E0E; <code>git merge</code>&#xFF0C;&#x5408;&#x5E76;&#x4E0A;&#x6E38;&#x5206;&#x652F;&#x6765;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x3002;</li>
+<li>&#x76F4;&#x63A5;&#x8FD0;&#x884C; <code>git submodule update --remote image</code> &#x83B7;&#x53D6;&#x4E0A;&#x6E38;&#x5206;&#x652F;&#x6765;&#x66F4;&#x65B0;&#x672C;&#x5730;&#x4EE3;&#x7801;&#x3002;</li>
+</ol>
+<h2 id="&#x5C0F;&#x7ED3;">3 &#x5C0F;&#x7ED3;</h2>
+<p>&#x672C;&#x6587;&#x4E3B;&#x8981;&#x8BA8;&#x8BBA;&#x4E86;&#x5982;&#x4F55;&#x5229;&#x7528; Git &#x4E0E; Github &#x521B;&#x5EFA;&#x5C5E;&#x4E8E;&#x81EA;&#x5DF1;&#x7684;&#x9879;&#x76EE;&#xFF0C;&#x540C;&#x65F6;&#x4E5F;&#x4ECB;&#x7ECD;&#x4E86;&#x5982;&#x4F55;&#x5229;&#x7528; <code>git submodule</code> &#x5728;&#x5927;&#x9879;&#x76EE;&#x4E2D;&#x7BA1;&#x7406;&#x5C0F;&#x9879;&#x76EE;&#x3002;</p>
+<h2 id="notebook">notebook</h2>
+<p>&#x7B14;&#x8BB0;&#x672C;</p>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://xinetzone.github.io" rel="external nofollow noreferrer">刘新伟</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://xinetzone.github.io/zh-CN/e6d6f9e7.html">https://xinetzone.github.io/zh-CN/e6d6f9e7.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://xinetzone.github.io" target="_blank">刘新伟</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/git/">
+                                    <span class="chip bg-color">git</span>
+                                </a>
+                            
+                                <a href="/tags/github/">
+                                    <span class="chip bg-color">github</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd52cfeaf298279fd484b',
+        clientSecret: '97687c5869aa1073c670481e8acd37817eda5fa0',
+        repo: 'xinetzone.github.io',
+        owner: 'xinetzone',
+        admin: "xinetzone",
+        id: '2019-09-18T16-40-59',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+            <div class="card">
+                <a href="/zh-CN/55e01cf0.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="Python3 之类型注解">
+                        
+                        <span class="card-title">Python3 之类型注解</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            本文主要介绍如何注解 Python，方便代码的审查。
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Python/" class="post-category">
+                                    Python
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/typing/">
+                        <span class="chip bg-color">typing</span>
+                    </a>
+                    
+                    <a href="/tags/dataclass/">
+                        <span class="chip bg-color">dataclass</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/zh-CN/ad2d8036.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/6.jpg" class="responsive-img" alt="计算机视觉入门必备工具">
+                        
+                        <span class="card-title">计算机视觉入门必备工具</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            介绍如何利用 Git 与 GitHub 获取计算机视觉项目。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-09-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%95%99%E7%A8%8B/" class="post-category">
+                                    教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/git/">
+                        <span class="chip bg-color">git</span>
+                    </a>
+                    
+                    <a href="/tags/github/">
+                        <span class="chip bg-color">github</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 上善若水<br />'
+            + '文章作者: 刘新伟<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://xinetzone.github.io" target="_blank">刘新伟</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">26.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xinzone@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=735613050" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/liu-xin-wei-55/activities" target="_blank" rel="noopener" data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/rss2.xml" class="tooltipped" target="_blank" data-tooltip="RSS2 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+
+    <a href="https://www.linkedin.com/in/xinet" target="_blank" rel="noopener" class="tooltipped" data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>

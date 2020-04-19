@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>上善若水</title>
+    <link>https://xinetzone.github.io/</link>
+    
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    
+    <description>温州大学 | 应用数学 | 深度学习</description>
+    <pubDate>Sun, 19 Apr 2020 11:27:05 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>计算机视觉的数学基础</title>
+      <link>https://xinetzone.github.io/zh-CN/2c3593ef.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/2c3593ef.html</guid>
+      <pubDate>Sun, 19 Apr 2020 02:35:39 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/2c3593ef.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>直线、圆、圆锥曲线</title>
+      <link>https://xinetzone.github.io/zh-CN/d7379ca0.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/d7379ca0.html</guid>
+      <pubDate>Sat, 15 Feb 2020 05:46:22 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/d7379ca0.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>三角函数</title>
+      <link>https://xinetzone.github.io/zh-CN/5640f8b3.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/5640f8b3.html</guid>
+      <pubDate>Fri, 14 Feb 2020 12:13:46 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/5640f8b3.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>数学归纳法</title>
+      <link>https://xinetzone.github.io/zh-CN/886e6229.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/886e6229.html</guid>
+      <pubDate>Fri, 14 Feb 2020 02:14:03 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/886e6229.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>迭代法求数列</title>
+      <link>https://xinetzone.github.io/zh-CN/8d33ba78.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/8d33ba78.html</guid>
+      <pubDate>Fri, 31 Jan 2020 09:12:25 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/8d33ba78.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>hexo入门</title>
+      <link>https://xinetzone.github.io/en/3001defc.html</link>
+      <guid>https://xinetzone.github.io/en/3001defc.html</guid>
+      <pubDate>Sat, 28 Dec 2019 11:02:16 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/en/3001defc.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>测试图片上传</title>
+      <link>https://xinetzone.github.io/zh-CN/79a6148d.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/79a6148d.html</guid>
+      <pubDate>Tue, 10 Dec 2019 15:46:38 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/79a6148d.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Python3 之类型注解</title>
+      <link>https://xinetzone.github.io/zh-CN/55e01cf0.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/55e01cf0.html</guid>
+      <pubDate>Fri, 18 Oct 2019 14:11:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/55e01cf0.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>构建属于自己的项目</title>
+      <link>https://xinetzone.github.io/zh-CN/e6d6f9e7.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/e6d6f9e7.html</guid>
+      <pubDate>Wed, 18 Sep 2019 08:40:59 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;&amp;#x672C;&amp;#x7AE0;&amp;#x4E3B;&amp;#x8981;&amp;#x9488;&amp;#x5BF9;&amp;#x201C;&amp;#x5982;&amp;#x4F55;&amp;#x6784;&amp;#x5EFA;&amp;#x4E00;&amp;#x4E2A;&amp;#x5C5E;&amp;#x4E8E;&amp;#x81EA;&amp;#x5DF1;&amp;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/e6d6f9e7.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>计算机视觉入门必备工具</title>
+      <link>https://xinetzone.github.io/zh-CN/ad2d8036.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/ad2d8036.html</guid>
+      <pubDate>Sat, 14 Sep 2019 02:40:44 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.jsdelivr.net/npm/katex@0.10.1/dist/katex.min.css&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/ad2d8036.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>github 编写 README 时如何获取 fork 等图标</title>
+      <link>https://xinetzone.github.io/zh-CN/f7c6a6b8.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/f7c6a6b8.html</guid>
+      <pubDate>Mon, 02 Sep 2019 15:25:07 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;&amp;#x4E00;&amp;#x822C;&amp;#x6BD4;&amp;#x8F83;&amp;#x6B63;&amp;#x5F0F;&amp;#x7684;&amp;#x5F00;&amp;#x6E90;&amp;#x9879;&amp;#x76EE;&amp;#x4F1A;&amp;#x5728; &lt;code&gt;README.md&lt;/code&gt;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/f7c6a6b8.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>如何修改 hexo-theme-matery 模板</title>
+      <link>https://xinetzone.github.io/zh-CN/3567ebbb.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/3567ebbb.html</guid>
+      <pubDate>Mon, 02 Sep 2019 13:06:59 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;&amp;#x4FEE;&amp;#x6539;-docs-&amp;#x76EE;&amp;#x5F55;&amp;#x4E0B;&amp;#x7684;-_config.yml&quot;&gt;&amp;#x4FEE;&amp;#x6539; &lt;code&gt;/docs/&lt;/code&gt;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/3567ebbb.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Hexo+vscode+github pages 搭建属于自己的博客</title>
+      <link>https://xinetzone.github.io/zh-CN/41cccb40.html</link>
+      <guid>https://xinetzone.github.io/zh-CN/41cccb40.html</guid>
+      <pubDate>Mon, 02 Sep 2019 06:34:07 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;p&gt;&amp;#x53C2;&amp;#x8003;&amp;#xFF1A;&lt;a href=&quot;https://godweiyang.com/2018/04/13/hexo-blog/#toc-heading-1/&quot; target=&quot;_blank&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://xinetzone.github.io/zh-CN/41cccb40.html#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>

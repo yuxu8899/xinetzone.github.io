@@ -1,0 +1,1032 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="他说, MXNet Pytorch TensorFlow 刘新伟 计算机视觉 深度学习">
+    <meta name="description" content="他说 | 上善若水">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>他说 | 上善若水</title>
+    <link rel="icon" type="image/png" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="上善若水" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">上善若水</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Categories</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/lab" class="waves-effect waves-light">
+      
+      <i class="fas fa-eye" style="zoom: 0.6;"></i>
+      
+      <span>视界</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/medias" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/schedule">
+          
+          <i class="fas fa-th-large" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Schedule</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">上善若水</div>
+        <div class="logo-desc">
+            
+            温州大学 | 应用数学 | 深度学习
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Tags</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Categories</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/lab" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-eye"></i>
+			
+			视界
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/schedule " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-th-large" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Schedule</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/xinetzone/xinetzone.github.io" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/xinetzone/xinetzone.github.io" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    <div class="bg-cover pd-header about-cover">
+    <div class="container">
+    <div class="row">
+    <div class="col s10 offset-s1 m8 offset-m2 l8 offset-l2">
+        <div class="brand">
+            <div class="title center-align">
+                
+                知者乐水，仁者乐山
+                
+            </div>
+
+            <div class="description center-align">
+                
+                <span id="subtitle"></span>
+                <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11"></script>
+                <script>
+                    var typed = new Typed("#subtitle", {
+                        strings: ['从来没有真正的绝境, 只有心灵的迷途','Never really desperate, only the lost of the soul'],
+                        startDelay: 300,
+                        typeSpeed: 100,
+                        loop: true,
+                        backSpeed: 50,
+                        showCursor: true
+                    });
+                </script>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    // 每天切换 banner 图.  Switch banner image every day.
+    $('.bg-cover').css('background-image', 'url(https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/banner/' + new Date().getDay() + '.jpg)');
+</script>
+
+
+    </div>
+</div>
+
+<main class="content">
+    <div id="contact" class="container chip-container">
+        <div class="card">
+            <div class="card-content">
+                <div class="tag-title center-align">
+                    <i class="fas fa-eye"></i>&nbsp;&nbsp;lab
+                </div>
+                <h2 id="&#x4ED6;&#x8BF4;">&#x4ED6;&#x8BF4;</h2>
+<p>&#x6536;&#x96C6;&#x5404;&#x79CD;&#x4F18;&#x8D28;&#x8D44;&#x6E90;&#x3002;</p>
+<h3 id="ai-&#x8D44;&#x6E90;">AI &#x8D44;&#x6E90;</h3>
+<ul>
+<li><a href="https://github.com/apachecn/awesome-data-comp-solution" target="_blank" rel="noopener">&#x6570;&#x636E;&#x79D1;&#x5B66;/&#x4EBA;&#x5DE5;&#x667A;&#x80FD;&#x6BD4;&#x8D5B;&#x89E3;&#x51B3;&#x65B9;&#x6848;&#x6C47;&#x603B;</a></li>
+</ul>
+<h3 id="&#x9879;&#x76EE;&#x5F00;&#x6E90;">&#x9879;&#x76EE;&#x5F00;&#x6E90;</h3>
+<ul>
+<li><a href="https://www.gnu.org/licenses/licenses.zh-cn.html" target="_blank" rel="noopener">GNU&#x64CD;&#x4F5C;&#x7CFB;&#x7EDF;&#xFF1A;&#x5982;&#x4F55;&#x9009;&#x62E9;&#x5F00;&#x6E90;&#x8BB8;&#x53EF;&#x8BC1;&#x534F;&#x8BAE;</a></li>
+</ul>
+<h3 id="github-actions">GitHub Actions</h3>
+<ul>
+<li><a href="https://github.com/sdras/awesome-actions" target="_blank" rel="noopener">Awesome Actions</a></li>
+</ul>
+<h3 id="git">Git</h3>
+<ul>
+<li><a href="https://git-scm.com/book/zh/v2/Git-&#x5DE5;&#x5177;-&#x5B50;&#x6A21;&#x5757;" target="_blank" rel="noopener">7.11 Git &#x5DE5;&#x5177; - &#x5B50;&#x6A21;&#x5757;</a></li>
+<li><a href="http://servicecomb.apache.org/cn/developers/use-gitter/" target="_blank" rel="noopener">Gitter &#x4F7F;&#x7528;&#x6307;&#x5357;</a></li>
+<li><a href="https://juejin.im/post/5c4c738ce51d4525211c129b" target="_blank" rel="noopener">Gitter - &#x9AD8;&#x989C;&#x503C;GitHub&#x5C0F;&#x7A0B;&#x5E8F;&#x5BA2;&#x6237;&#x7AEF;&#x8BDE;&#x751F;&#x8BB0;</a></li>
+<li><a href="https://gitbook.tw/" target="_blank" rel="noopener">&#x70BA;&#x4F60;&#x81EA;&#x5DF1;&#x5B78; Git</a></li>
+<li><a href="http://danielkummer.github.io/git-flow-cheatsheet/index.zh_CN.html" target="_blank" rel="noopener">git-flow &#x5907;&#x5FD8;&#x6E05;&#x5355;</a></li>
+<li><a href="https://git.ninghao.net/" target="_blank" rel="noopener">GitBook: Git</a></li>
+<li><a href="https://msd.misuland.com/pd/2884250171976191636" target="_blank" rel="noopener">Git&#x5DE5;&#x4F5C;&#x6D41;&#x6307;&#x5357;&#xFF1A;Gitflow&#x5DE5;&#x4F5C;&#x6D41;</a></li>
+<li><a href="https://baijiahao.baidu.com/s?id=1595438303905568792" target="_blank" rel="noopener">&#x4F18;&#x7EF4;&#x72EC;&#x5BB6;&#x5206;&#x4EAB; - GitFlow&#x5206;&#x652F;&#x6A21;&#x578B;&#x4E0B;&#x7684;&#x4EE3;&#x7801;&#x5168;&#x91CF;&#x683C;&#x5F0F;&#x5316;&#x6D41;&#x7A0B;</a></li>
+</ul>
+<p>&#x6CE8;&#x610F;&#xFF1A;&#x5BF9;&#x4E8E; tag &#x547D;&#x540D;&#x9700;&#x8981;&#x9075;&#x5FAA;&#xFF1A;<code>1.0.2</code> &#x8FD9;&#x79CD;&#x5F62;&#x5F0F;&#xFF0C;&#x5176;&#x4E2D; <code>1</code> &#x8868;&#x793A;&#x6709;&#x91CD;&#x5927;&#x6539;&#x53D8;&#xFF0C;<code>0</code> &#x8868;&#x793A;&#x6709;&#x65B0;&#x7684;&#x529F;&#x80FD;&#x5F15;&#x5165;&#xFF0C;<code>2</code> &#x8868;&#x793A;&#x4FEE;&#x590D; bug&#x3002;</p>
+<ul>
+<li><a href="https://www.git-tower.com/learn/git/ebook/cn/command-line/introduction" target="_blank" rel="noopener">Learn Version Control with Git</a></li>
+</ul>
+<figure>
+<img src="/lab/%E4%BB%96%E8%AF%B4/git.png" alt><figcaption>git &#x6307;&#x4EE4;&#x901F;&#x67E5;&#x8868;</figcaption>
+</figure>
+<figure>
+<img src="/lab/%E4%BB%96%E8%AF%B4/git1.png" alt><figcaption>&#x7248;&#x672C;&#x63A7;&#x5236;&#x6700;&#x4F73;&#x5B9E;&#x8DF5;</figcaption>
+</figure>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/38457882" target="_blank" rel="noopener">&#x600E;&#x6837;&#x4EE5;&#x53CA;&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4FDD;&#x6301;&#x4F60;&#x7684; Git &#x63D0;&#x4EA4;&#x8BB0;&#x5F55;&#x7684;&#x6574;&#x6D01;</a></li>
+</ul>
+<h3 id="hexo">Hexo</h3>
+<ul>
+<li>&#x5B57;&#x7B26;&#xFF1A;<a href="https://fontawesome.com/icons" target="_blank" rel="noopener">Font Awesome</a></li>
+<li><a href="http://yearito.cn/posts/hexo-advanced-settings.html" target="_blank" rel="noopener">Hexo &#x642D;&#x5EFA;&#x4E2A;&#x4EBA;&#x535A;&#x5BA2;&#x7CFB;&#x5217;&#xFF1A;&#x8FDB;&#x9636;&#x8BBE;&#x7F6E;&#x7BC7;</a></li>
+<li><a href="https://hexo.io/themes/" target="_blank" rel="noopener">hexo: themes</a></li>
+<li><a href="https://draveness.me/git-comments-initialize" target="_blank" rel="noopener">&#x81EA;&#x52A8;&#x521D;&#x59CB;&#x5316; Gitalk &#x548C; Gitment &#x8BC4;&#x8BBA;</a></li>
+<li><a href="https://easyhexo.com/" target="_blank" rel="noopener">&#x8F7B;&#x677E;&#x5165;&#x95E8; Hexo</a></li>
+<li><a href="https://blog.csdn.net/github_37360787/article/details/82982723" target="_blank" rel="noopener">ejs &#x5E38;&#x7528;&#x6807;&#x7B7E;&#x8BE6;&#x89E3;</a></li>
+<li><a href="https://blog.csdn.net/zhangxin09/article/details/18409119" target="_blank" rel="noopener">EJS &#x6A21;&#x677F;&#x5FEB;&#x901F;&#x5165;&#x95E8;</a></li>
+<li><a href="https://hexo.io/zh-cn/" target="_blank" rel="noopener">Hexo &#x5B98;&#x65B9;&#x6559;&#x7A0B;</a></li>
+<li><a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">Fluid&#xFF1A;&#x4E00;&#x6B3E; Material Design &#x98CE;&#x683C;&#x7684;&#x4E3B;&#x9898;</a></li>
+<li><a href="https://github.com/shenliyang/hexo-theme-snippet" target="_blank" rel="noopener">Snippet &#x7B80;&#x6D01;&#x800C;&#x4E0D;&#x7B80;&#x5355;&#xFF0C;&#x4E5F;&#x8BB8;&#x662F;&#x4E00;&#x6B3E;&#x4F60;&#x5BFB;&#x627E;&#x5DF2;&#x4E45;hexo&#x4E3B;&#x9898;</a></li>
+<li><a href="https://github.com/kaiiiz/hexo-theme-book" target="_blank" rel="noopener">A simple, elegant, book-like hexo theme with some useful features</a></li>
+<li><a href="http://www.materializecss.cn/index.html" target="_blank" rel="noopener">Materialize: &#x57FA;&#x4E8E;Material Design&#x7684;&#x4E3B;&#x6D41;&#x524D;&#x7AEF;&#x54CD;&#x5E94;&#x5F0F;&#x6846;&#x67B6;</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/tag-plugins.html" target="_blank" rel="noopener">hexo: &#x6807;&#x7B7E;&#x63D2;&#x4EF6;&#xFF08;Tag Plugins&#xFF09;</a></li>
+<li><a href="https://www.zhihu.com/question/19580096" target="_blank" rel="noopener">&#x4F60;&#x5FC5;&#x8BFB;&#x7684; RSS &#x8BA2;&#x9605;&#x6E90;&#x6709;&#x54EA;&#x4E9B;&#xFF1F;</a></li>
+<li><a href="https://tyloafer.github.io/posts/7790/" target="_blank" rel="noopener">Hexo&#x4E2D;&#x5F15;&#x5165;Mermaid&#x6D41;&#x7A0B;&#x56FE;</a></li>
+</ul>
+<h3 id="jekyll">Jekyll</h3>
+<ul>
+<li><a href="https://www.jekyll.com.cn/docs/configuration/" target="_blank" rel="noopener">Jekyll &#x4E2D;&#x6587;&#x6587;&#x6863;</a></li>
+<li><a href="https://www.helplib.com/GitHub/article_145658" target="_blank" rel="noopener">minima, &#x6700;&#x5C0F;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x9002;&#x5408;&#x6240;&#x6709;Jekyll&#x4E3B;&#x9898;&#x7684;size</a></li>
+</ul>
+<h3 id="vuepress">Vuepress</h3>
+<ul>
+<li><a href="https://vuepress.vuejs.org/zh/" target="_blank" rel="noopener">Vue &#x9A71;&#x52A8;&#x7684;&#x9759;&#x6001;&#x7F51;&#x7AD9;&#x751F;&#x6210;&#x5668;</a></li>
+</ul>
+<h2 id="&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x4E66;&#x7C4D;&#x4E0E;&#x6E90;&#x7801;">&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x4E66;&#x7C4D;&#x4E0E;&#x6E90;&#x7801;</h2>
+<ul>
+<li>&#x4E66;&#x7C4D;&#xFF1A;<a href="http://szeliski.org/Book/" target="_blank" rel="noopener">Computer Vision: Algorithms and Applications</a> | &#x4EE3;&#x7801;&#xFF1A;<a href="https://github.com/XiaoshengLiang" target="_blank" rel="noopener">XiaoshengLiang</a>/**<a href="https://github.com/XiaoshengLiang/Computer_Vision" target="_blank" rel="noopener">Computer_Vision</a>* | Slides&#xFF1A;<a href="http://www.cs.washington.edu/education/courses/cse576/08sp/" target="_blank" rel="noopener">CSE 576 (Graduate Computer Vision)</a></li>
+<li>&#x5728; <a href="https://github.com/topics/computer-vision" target="_blank" rel="noopener">Topic: Computer vision</a> &#x4E2D;&#x5B58;&#x5728;&#x8BB8;&#x591A;&#x4F18;&#x79C0;&#x8D44;&#x6E90;&#xFF0C;&#x53EF;&#x4EE5;&#x81EA;&#x884C;&#x9009;&#x62E9;&#x3002;</li>
+<li>awesome &#x4E00;&#x822C;&#x90FD;&#x662F;&#x6BD4;&#x8F83;&#x4F18;&#x79C0;&#x7684;&#x8D44;&#x6E90;&#xFF1A;<a href="https://github.com/jbhuang0604" target="_blank" rel="noopener">jbhuang0604</a>/<strong><a href="https://github.com/jbhuang0604/awesome-computer-vision" target="_blank" rel="noopener">awesome-computer-vision</a></strong></li>
+<li><a href="https://github.com/AustinKobayashi" target="_blank" rel="noopener">AustinKobayashi</a>/<strong><a href="https://github.com/AustinKobayashi/CPSC-340" target="_blank" rel="noopener">CPSC-340</a></strong></li>
+<li><a href="https://github.com/satyajeetkr9" target="_blank" rel="noopener">satyajeetkr9</a>/<strong><a href="https://github.com/satyajeetkr9/Obvision" target="_blank" rel="noopener">Obvision</a></strong></li>
+</ul>
+<h2 id="python&#x8D44;&#x6E90;&#x5E93;">Python&#x8D44;&#x6E90;&#x5E93;</h2>
+<h3 id="&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;">&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;</h3>
+<ul>
+<li><a href="http://simplecv.org/" target="_blank" rel="noopener">SimpleCV</a>&#x2014;&#x5F00;&#x6E90;&#x7684;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x6846;&#x67B6;&#xFF0C;&#x53EF;&#x4EE5;&#x8BBF;&#x95EE;&#x5982;OpenCV&#x7B49;&#x9AD8;&#x6027;&#x80FD;&#x8BA1;&#x7B97;&#x673A;&#x89C6;&#x89C9;&#x5E93;&#x3002;&#x4F7F;&#x7528;Python&#x7F16;&#x5199;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;Mac&#x3001;Windows&#x4EE5;&#x53CA;Ubuntu&#x4E0A;&#x8FD0;&#x884C;&#x3002;</li>
+</ul>
+<h4 id="&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;"><a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md#natural-language-processing-5" target="_blank" rel="noopener">&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;</a></h4>
+<ul>
+<li><p><a href="http://www.oschina.net/p/nltk" target="_blank" rel="noopener">NLTK</a> &#x2014;&#x4E00;&#x4E2A;&#x9886;&#x5148;&#x7684;&#x5E73;&#x53F0;&#xFF0C;&#x7528;&#x6765;&#x7F16;&#x5199;&#x5904;&#x7406;&#x4EBA;&#x7C7B;&#x8BED;&#x8A00;&#x6570;&#x636E;&#x7684;Python&#x7A0B;&#x5E8F;</p></li>
+<li><p><a href="http://www.clips.ua.ac.be/pattern" target="_blank" rel="noopener">Pattern</a>&#x2014;Python&#x53EF;&#x7528;&#x7684;web&#x6316;&#x6398;&#x6A21;&#x5757;&#xFF0C;&#x5305;&#x62EC;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x3001;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7B49;&#x5DE5;&#x5177;&#x3002;</p></li>
+<li><p><a href="http://textblob.readthedocs.org/" target="_blank" rel="noopener">TextBlob</a>&#x2014;&#x4E3A;&#x666E;&#x901A;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x5904;&#x7406;&#x4EFB;&#x52A1;&#x63D0;&#x4F9B;&#x4E00;&#x81F4;&#x7684;API&#xFF0C;&#x4EE5;NLTK&#x548C;Pattern&#x4E3A;&#x57FA;&#x7840;&#xFF0C;&#x5E76;&#x548C;&#x4E24;&#x8005;&#x90FD;&#x80FD;&#x5F88;&#x597D;&#x517C;&#x5BB9;&#x3002;</p></li>
+<li><p><a href="https://github.com/fxsjy/jieba#jieba-1" target="_blank" rel="noopener">jieba</a>&#x2014;&#x4E2D;&#x6587;&#x65AD;&#x8BCD;&#x5DE5;&#x5177;&#x3002;</p></li>
+<li><p><a href="https://github.com/isnowfy/snownlp" target="_blank" rel="noopener">SnowNLP</a> &#x2014;&#x4E2D;&#x6587;&#x6587;&#x672C;&#x5904;&#x7406;&#x5E93;&#x3002;</p></li>
+<li><p><a href="https://github.com/victorlin/loso" target="_blank" rel="noopener">loso</a>&#x2014;&#x53E6;&#x4E00;&#x4E2A;&#x4E2D;&#x6587;&#x65AD;&#x8BCD;&#x5E93;&#x3002;</p></li>
+<li><p><a href="https://github.com/duanhongyi/genius" target="_blank" rel="noopener">genius</a> &#x2014;&#x57FA;&#x4E8E;&#x6761;&#x4EF6;&#x968F;&#x673A;&#x57DF;&#x7684;&#x4E2D;&#x6587;&#x65AD;&#x8BCD;&#x5E93;&#x3002;</p></li>
+<li><p><a href="https://github.com/pprett/nut" target="_blank" rel="noopener">nut</a> &#x2014;&#x81EA;&#x7136;&#x8BED;&#x8A00;&#x7406;&#x89E3;&#x5DE5;&#x5177;&#x5305;&#x3002;</p></li>
+</ul>
+<h3 id="&#x901A;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;"><a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md#general-purpose-machine-learning-7" target="_blank" rel="noopener">&#x901A;&#x7528;&#x673A;&#x5668;&#x5B66;&#x4E60;</a></h3>
+<ul>
+<li><a href="https://github.com/CamDavidsonPilon/Probabilistic-Programming-and-Bayesian-Methods-for-Hackers" target="_blank" rel="noopener">Bayesian Methods for Hackers</a> &#x2014;Python&#x8BED;&#x8A00;&#x6982;&#x7387;&#x89C4;&#x5212;&#x7684;&#x7535;&#x5B50;&#x4E66;</li>
+<li><a href="http://spark.apache.org/docs/latest/mllib-guide.html" target="_blank" rel="noopener">MLlib in Apache Spark</a>&#x2014;Spark&#x4E0B;&#x7684;&#x5206;&#x5E03;&#x5F0F;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x3002;</li>
+<li><a href="http://scikit-learn.org/" target="_blank" rel="noopener">scikit-learn</a>&#x2014;&#x57FA;&#x4E8E;SciPy&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x5757;</li>
+<li><a href="http://graphlab.com/products/create/docs/" target="_blank" rel="noopener">graphlab-create</a> &#x2014;&#x5305;&#x542B;&#x591A;&#x79CD;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6A21;&#x5757;&#x7684;&#x5E93;&#xFF08;&#x56DE;&#x5F52;&#xFF0C;&#x805A;&#x7C7B;&#xFF0C;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#xFF0C;&#x56FE;&#x5206;&#x6790;&#x7B49;&#xFF09;&#xFF0C;&#x57FA;&#x4E8E;&#x53EF;&#x4EE5;&#x78C1;&#x76D8;&#x5B58;&#x50A8;&#x7684;DataFrame&#x3002;</li>
+<li><a href="https://bigml.com/" target="_blank" rel="noopener">BigML</a>&#x2014;&#x8FDE;&#x63A5;&#x5916;&#x90E8;&#x670D;&#x52A1;&#x5668;&#x7684;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/clips/pattern" target="_blank" rel="noopener">pattern</a>&#x2014;Python&#x7684;web&#x6316;&#x6398;&#x6A21;&#x5757;</li>
+<li><a href="https://github.com/numenta/nupic" target="_blank" rel="noopener">NuPIC</a>&#x2014;Numenta&#x516C;&#x53F8;&#x7684;&#x667A;&#x80FD;&#x8BA1;&#x7B97;&#x5E73;&#x53F0;&#x3002;</li>
+<li><a href="https://github.com/lisa-lab/pylearn2" target="_blank" rel="noopener">Pylearn2</a>&#x2014;&#x57FA;&#x4E8E;Theano&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/hannes-brt/hebel" target="_blank" rel="noopener">hebel</a> &#x2014;Python&#x7F16;&#x5199;&#x7684;&#x4F7F;&#x7528;GPU&#x52A0;&#x901F;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/piskvorky/gensim" target="_blank" rel="noopener">gensim</a>&#x2014;&#x4E3B;&#x9898;&#x5EFA;&#x6A21;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="https://github.com/pybrain/pybrain" target="_blank" rel="noopener">PyBrain</a>&#x2014;&#x53E6;&#x4E00;&#x4E2A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/muricoca/crab" target="_blank" rel="noopener">Crab</a> &#x2014;&#x53EF;&#x6269;&#x5C55;&#x7684;&#x3001;&#x5FEB;&#x901F;&#x63A8;&#x8350;&#x5F15;&#x64CE;&#x3002;</li>
+<li><a href="https://github.com/ocelma/python-recsys" target="_blank" rel="noopener">python-recsys</a> &#x2014;Python&#x5B9E;&#x73B0;&#x7684;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li><a href="https://github.com/AllenDowney/ThinkBayes" target="_blank" rel="noopener">thinking bayes</a>&#x2014;&#x5173;&#x4E8E;&#x8D1D;&#x53F6;&#x65AF;&#x5206;&#x6790;&#x7684;&#x4E66;&#x7C4D;</li>
+<li><a href="https://github.com/echen/restricted-boltzmann-machines" target="_blank" rel="noopener">Restricted Boltzmann Machines</a> &#x2014;Python&#x5B9E;&#x73B0;&#x7684;&#x53D7;&#x9650;&#x6CE2;&#x5C14;&#x5179;&#x66FC;&#x673A;&#x3002;[&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;]&#x3002;</li>
+<li><a href="https://github.com/pprett/bolt" target="_blank" rel="noopener">Bolt</a> &#x2014;&#x5728;&#x7EBF;&#x5B66;&#x4E60;&#x5DE5;&#x5177;&#x7BB1;&#x3002;</li>
+<li><a href="https://github.com/patvarilly/CoverTree" target="_blank" rel="noopener">CoverTree</a> &#x2014;cover tree&#x7684;Python&#x5B9E;&#x73B0;&#xFF0C;scipy.spatial.kdtree&#x4FBF;&#x6377;&#x7684;&#x66FF;&#x4EE3;&#x3002;</li>
+<li><a href="https://github.com/nilearn/nilearn" target="_blank" rel="noopener">nilearn</a>&#x2014;Python&#x5B9E;&#x73B0;&#x7684;&#x795E;&#x7ECF;&#x5F71;&#x50CF;&#x5B66;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/shogun-toolbox/shogun" target="_blank" rel="noopener">Shogun</a>&#x2014;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5DE5;&#x5177;&#x7BB1;&#x3002;</li>
+<li><a href="https://github.com/perone/Pyevolve" target="_blank" rel="noopener">Pyevolve</a> &#x2014;&#x9057;&#x4F20;&#x7B97;&#x6CD5;&#x6846;&#x67B6;&#x3002;</li>
+<li><a href="http://caffe.berkeleyvision.org/" target="_blank" rel="noopener">Caffe</a> &#x2014;&#x8003;&#x8651;&#x4E86;&#x4EE3;&#x7801;&#x6E05;&#x6D01;&#x3001;&#x53EF;&#x8BFB;&#x6027;&#x53CA;&#x901F;&#x5EA6;&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6846;&#x67B6;</li>
+<li><a href="https://github.com/breze-no-salt/breze" target="_blank" rel="noopener">breze</a>&#x2014;&#x6DF1;&#x5EA6;&#x53CA;&#x9012;&#x5F52;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x7A0B;&#x5E8F;&#x5E93;&#xFF0C;&#x57FA;&#x4E8E;Theano&#x3002;</li>
+</ul>
+<h3 id="&#x6570;&#x636E;&#x5206;&#x6790;&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;"><a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md#data-analysis--data-visualization-5" target="_blank" rel="noopener">&#x6570;&#x636E;&#x5206;&#x6790;/&#x6570;&#x636E;&#x53EF;&#x89C6;&#x5316;</a></h3>
+<ul>
+<li><a href="http://www.scipy.org/" target="_blank" rel="noopener">SciPy</a> &#x2014;&#x57FA;&#x4E8E;Python&#x7684;&#x6570;&#x5B66;&#x3001;&#x79D1;&#x5B66;&#x3001;&#x5DE5;&#x7A0B;&#x5F00;&#x6E90;&#x8F6F;&#x4EF6;&#x751F;&#x6001;&#x7CFB;&#x7EDF;&#x3002;</li>
+<li><a href="http://www.numpy.org/" target="_blank" rel="noopener">NumPy</a>&#x2014;Python&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x57FA;&#x7840;&#x5305;&#x3002;</li>
+<li><a href="http://numba.pydata.org/" target="_blank" rel="noopener">Numba</a> &#x2014;Python&#x7684;&#x4F4E;&#x7EA7;&#x865A;&#x62DF;&#x673A;JIT&#x7F16;&#x8BD1;&#x5668;&#xFF0C;Cython and NumPy&#x7684;&#x5F00;&#x53D1;&#x8005;&#x7F16;&#x5199;&#xFF0C;&#x4F9B;&#x79D1;&#x5B66;&#x8BA1;&#x7B97;&#x4F7F;&#x7528;</li>
+<li><a href="https://networkx.github.io/" target="_blank" rel="noopener">NetworkX</a> &#x2014;&#x4E3A;&#x590D;&#x6742;&#x7F51;&#x7EDC;&#x4F7F;&#x7528;&#x7684;&#x9AD8;&#x6548;&#x8F6F;&#x4EF6;&#x3002;</li>
+<li><a href="http://pandas.pydata.org/" target="_blank" rel="noopener">Pandas</a>&#x2014;&#x8FD9;&#x4E2A;&#x5E93;&#x63D0;&#x4F9B;&#x4E86;&#x9AD8;&#x6027;&#x80FD;&#x3001;&#x6613;&#x7528;&#x7684;&#x6570;&#x636E;&#x7ED3;&#x6784;&#x53CA;&#x6570;&#x636E;&#x5206;&#x6790;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="https://github.com/avelino/mining" target="_blank" rel="noopener">Open Mining</a>&#x2014;Python&#x4E2D;&#x7684;&#x5546;&#x4E1A;&#x667A;&#x80FD;&#x5DE5;&#x5177;&#xFF08;Pandas web&#x63A5;&#x53E3;&#xFF09;&#x3002;</li>
+<li><a href="https://github.com/pymc-devs/pymc" target="_blank" rel="noopener">PyMC</a> &#x2014;MCMC&#x91C7;&#x6837;&#x5DE5;&#x5177;&#x5305;&#x3002;</li>
+<li><a href="https://github.com/quantopian/zipline" target="_blank" rel="noopener">zipline</a>&#x2014;Python&#x7684;&#x7B97;&#x6CD5;&#x4EA4;&#x6613;&#x5E93;&#x3002;</li>
+<li><a href="https://pydy.org/" target="_blank" rel="noopener">PyDy</a>&#x2014;&#x5168;&#x540D;Python Dynamics&#xFF0C;&#x534F;&#x52A9;&#x57FA;&#x4E8E;NumPy, SciPy, IPython&#x4EE5;&#x53CA; matplotlib&#x7684;&#x52A8;&#x6001;&#x5EFA;&#x6A21;&#x5DE5;&#x4F5C;&#x6D41;&#x3002;</li>
+<li><a href="https://github.com/sympy/sympy" target="_blank" rel="noopener">SymPy</a> &#x2014;&#x7B26;&#x53F7;&#x6570;&#x5B66;Python&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/statsmodels/statsmodels" target="_blank" rel="noopener">statsmodels</a>&#x2014;Python&#x7684;&#x7EDF;&#x8BA1;&#x5EFA;&#x6A21;&#x53CA;&#x8BA1;&#x91CF;&#x7ECF;&#x6D4E;&#x5B66;&#x5E93;&#x3002;</li>
+<li><a href="http://www.astropy.org/" target="_blank" rel="noopener">astropy</a> &#x2014;Python&#x5929;&#x6587;&#x5B66;&#x7A0B;&#x5E8F;&#x5E93;&#xFF0C;&#x793E;&#x533A;&#x534F;&#x4F5C;&#x7F16;&#x5199;</li>
+<li><a href="http://matplotlib.org/" target="_blank" rel="noopener">matplotlib</a> &#x2014;Python&#x7684;2D&#x7ED8;&#x56FE;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/ContinuumIO/bokeh" target="_blank" rel="noopener">bokeh</a>&#x2014;Python&#x7684;&#x4EA4;&#x4E92;&#x5F0F;Web&#x7ED8;&#x56FE;&#x5E93;&#x3002;</li>
+<li><a href="https://plot.ly/python" target="_blank" rel="noopener">plotly</a> &#x2014;Python and matplotlib&#x7684;&#x534F;&#x4F5C;web&#x7ED8;&#x56FE;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/wrobstory/vincent" target="_blank" rel="noopener">vincent</a>&#x2014;&#x5C06;Python&#x6570;&#x636E;&#x7ED3;&#x6784;&#x8F6C;&#x6362;&#x4E3A;Vega&#x53EF;&#x89C6;&#x5316;&#x8BED;&#x6CD5;&#x3002;</li>
+<li><a href="https://github.com/mikedewar/d3py" target="_blank" rel="noopener">d3py</a>&#x2014;Python&#x7684;&#x7ED8;&#x56FE;&#x5E93;&#xFF0C;&#x57FA;&#x4E8E;D3.js&#x3002;</li>
+<li><a href="https://github.com/yhat/ggplot" target="_blank" rel="noopener">ggplot</a> &#x2014;&#x548C;R&#x8BED;&#x8A00;&#x91CC;&#x7684;ggplot2&#x63D0;&#x4F9B;&#x540C;&#x6837;&#x7684;API&#x3002;</li>
+<li><a href="https://github.com/kartograph/kartograph.py" target="_blank" rel="noopener">Kartograph.py</a>&#x2014;Python&#x4E2D;&#x6E32;&#x67D3;SVG&#x56FE;&#x7684;&#x5E93;&#xFF0C;&#x6548;&#x679C;&#x6F02;&#x4EAE;&#x3002;</li>
+<li><a href="http://pygal.org/" target="_blank" rel="noopener">pygal</a>&#x2014;Python&#x4E0B;&#x7684;SVG&#x56FE;&#x8868;&#x751F;&#x6210;&#x5668;&#x3002;</li>
+<li><a href="https://github.com/twitter/pycascading" target="_blank" rel="noopener">pycascading</a></li>
+</ul>
+<h3 id="&#x6742;&#x9879;&#x811A;&#x672C;ipython&#x7B14;&#x8BB0;&#x4EE3;&#x7801;&#x5E93;"><a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md#misc-scripts--ipython-notebooks--codebases" target="_blank" rel="noopener">&#x6742;&#x9879;&#x811A;&#x672C;/iPython&#x7B14;&#x8BB0;/&#x4EE3;&#x7801;&#x5E93;</a></h3>
+<ul>
+<li><a href="https://github.com/rasbt/pattern_classification" target="_blank" rel="noopener">pattern_classification</a></li>
+<li><a href="https://github.com/Wavelets/ThinkStats2" target="_blank" rel="noopener">thinking stats 2</a></li>
+<li><a href="https://github.com/hyperopt/hyperopt-sklearn" target="_blank" rel="noopener">hyperopt</a></li>
+<li><a href="https://github.com/numenta/nupic" target="_blank" rel="noopener">numpic</a></li>
+<li><a href="https://github.com/ged-lab/2012-paper-diginorm" target="_blank" rel="noopener">2012-paper-diginorm</a></li>
+<li><a href="https://github.com/ogrisel/notebooks" target="_blank" rel="noopener">ipython-notebooks</a></li>
+<li><a href="https://github.com/CamDavidsonPilon/decision-weights" target="_blank" rel="noopener">decision-weights</a></li>
+<li><a href="https://github.com/Wavelets/sarah-palin-lda" target="_blank" rel="noopener">Sarah Palin LDA</a> &#x2014;Sarah Palin&#x5173;&#x4E8E;&#x4E3B;&#x9898;&#x5EFA;&#x6A21;&#x7684;&#x7535;&#x90AE;&#x3002;</li>
+<li><a href="https://github.com/Wavelets/diffusion-segmentation" target="_blank" rel="noopener">Diffusion Segmentation</a> &#x2014;&#x57FA;&#x4E8E;&#x6269;&#x6563;&#x65B9;&#x6CD5;&#x7684;&#x56FE;&#x50CF;&#x5206;&#x5272;&#x7B97;&#x6CD5;&#x96C6;&#x5408;&#x3002;</li>
+<li><a href="https://github.com/Wavelets/scipy-tutorials" target="_blank" rel="noopener">Scipy Tutorials</a> &#x2014;SciPy&#x6559;&#x7A0B;&#xFF0C;&#x5DF2;&#x8FC7;&#x65F6;&#xFF0C;&#x8BF7;&#x67E5;&#x770B;scipy-lecture-notes</li>
+<li><a href="https://github.com/marcelcaraciolo/crab" target="_blank" rel="noopener">Crab</a>&#x2014;Python&#x7684;&#x63A8;&#x8350;&#x5F15;&#x64CE;&#x5E93;&#x3002;</li>
+<li><a href="https://github.com/maxsklar/BayesPy" target="_blank" rel="noopener">BayesPy</a>&#x2014;Python&#x4E2D;&#x7684;&#x8D1D;&#x53F6;&#x65AF;&#x63A8;&#x65AD;&#x5DE5;&#x5177;&#x3002;</li>
+<li><a href="https://github.com/GaelVaroquaux/scikit-learn-tutorial" target="_blank" rel="noopener">scikit-learn tutorials</a>&#x2014;scikit-learn&#x5B66;&#x4E60;&#x7B14;&#x8BB0;&#x7CFB;&#x5217;</li>
+<li><a href="https://github.com/madhusudancs/sentiment-analyzer" target="_blank" rel="noopener">sentiment-analyzer</a> &#x2014;&#x63A8;&#x7279;&#x60C5;&#x7EEA;&#x5206;&#x6790;&#x5668;</li>
+<li><a href="https://github.com/fabianp/group_lasso" target="_blank" rel="noopener">group-lasso</a>&#x2014;&#x5750;&#x6807;&#x4E0B;&#x964D;&#x7B97;&#x6CD5;&#x5B9E;&#x9A8C;&#xFF0C;&#x5E94;&#x7528;&#x4E8E;&#xFF08;&#x7A00;&#x758F;&#xFF09;&#x7FA4;&#x5957;&#x7D22;&#x6A21;&#x578B;&#x3002;</li>
+<li><a href="https://github.com/mne-tools/mne-python-notebooks" target="_blank" rel="noopener">mne-python-notebooks</a>&#x2014;&#x4F7F;&#x7528; mne-python&#x8FDB;&#x884C;EEG/MEG&#x6570;&#x636E;&#x5904;&#x7406;&#x7684;IPython&#x7B14;&#x8BB0;</li>
+<li><a href="https://github.com/jvns/pandas-cookbook" target="_blank" rel="noopener">pandas cookbook</a>&#x2014;&#x4F7F;&#x7528;Python pandas&#x5E93;&#x7684;&#x65B9;&#x6CD5;&#x4E66;&#x3002;</li>
+<li><a href="https://github.com/BRML/climin" target="_blank" rel="noopener">climin</a>&#x2014;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7684;&#x4F18;&#x5316;&#x7A0B;&#x5E8F;&#x5E93;&#xFF0C;&#x7528;Python&#x5B9E;&#x73B0;&#x4E86;&#x68AF;&#x5EA6;&#x4E0B;&#x964D;&#x3001;LBFGS&#x3001;rmsprop&#x3001;adadelta &#x7B49;&#x7B97;&#x6CD5;&#x3002;</li>
+</ul>
+<h3 id="kaggle&#x7ADE;&#x8D5B;&#x6E90;&#x4EE3;&#x7801;"><a href="https://github.com/josephmisiti/awesome-machine-learning/blob/master/README.md#kaggle-competition-source-code" target="_blank" rel="noopener">Kaggle&#x7ADE;&#x8D5B;&#x6E90;&#x4EE3;&#x7801;</a></h3>
+<ul>
+<li><a href="https://github.com/hammer/wikichallenge" target="_blank" rel="noopener">wiki challange</a> &#x2014;Kaggle&#x4E0A;&#x4E00;&#x4E2A;&#x7EF4;&#x57FA;&#x9884;&#x6D4B;&#x6311;&#x6218;&#x8D5B; Dell Zhang&#x89E3;&#x6CD5;&#x7684;&#x5B9E;&#x73B0;&#x3002;</li>
+<li><a href="https://github.com/amueller/kaggle_insults" target="_blank" rel="noopener">kaggle insults</a>&#x2014;Kaggle&#x4E0A;&#x201D;&#x4ECE;&#x793E;&#x4EA4;&#x5A92;&#x4F53;&#x8BC4;&#x8BBA;&#x4E2D;&#x68C0;&#x6D4B;&#x8FB1;&#x9A82;&#x201C;&#x7ADE;&#x8D5B;&#x63D0;&#x4EA4;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/MLWave/kaggle_acquire-valued-shoppers-challenge" target="_blank" rel="noopener">kaggle_acquire-valued-shoppers-challenge</a>&#x2014;Kaggle&#x9884;&#x6D4B;&#x56DE;&#x5934;&#x5BA2;&#x6311;&#x6218;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-cifar" target="_blank" rel="noopener">kaggle-cifar</a> &#x2014;Kaggle&#x4E0A;CIFAR-10 &#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;cuda-convnet</li>
+<li><a href="https://github.com/zygmuntz/kaggle-blackbox" target="_blank" rel="noopener">kaggle-blackbox</a> &#x2014;Kaggle&#x4E0A;blackbox&#x8D5B;&#x4EE3;&#x7801;&#xFF0C;&#x5173;&#x4E8E;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x3002;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-accelerometer" target="_blank" rel="noopener">kaggle-accelerometer</a> &#x2014;Kaggle&#x4E0A;&#x52A0;&#x901F;&#x5EA6;&#x8BA1;&#x6570;&#x636E;&#x8BC6;&#x522B;&#x7528;&#x6237;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-advertised-salaries" target="_blank" rel="noopener">kaggle-advertised-salaries</a> &#x2014;Kaggle&#x4E0A;&#x7528;&#x5E7F;&#x544A;&#x9884;&#x6D4B;&#x5DE5;&#x8D44;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-amazon" target="_blank" rel="noopener">kaggle amazon</a> &#x2014;Kaggle&#x4E0A;&#x7ED9;&#x5B9A;&#x5458;&#x5DE5;&#x89D2;&#x8272;&#x9884;&#x6D4B;&#x5176;&#x8BBF;&#x95EE;&#x9700;&#x6C42;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-bestbuy_big" target="_blank" rel="noopener">kaggle-bestbuy_big</a>&#x2014;Kaggle&#x4E0A;&#x6839;&#x636E;bestbuy&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x9884;&#x6D4B;&#x70B9;&#x51FB;&#x5546;&#x54C1;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x5927;&#x6570;&#x636E;&#x7248;&#xFF09;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-bestbuy_small" target="_blank" rel="noopener">kaggle-bestbuy_small</a>&#x2014;Kaggle&#x4E0A;&#x6839;&#x636E;bestbuy&#x7528;&#x6237;&#x67E5;&#x8BE2;&#x9884;&#x6D4B;&#x70B9;&#x51FB;&#x5546;&#x54C1;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x5C0F;&#x6570;&#x636E;&#x7248;&#xFF09;</li>
+<li><a href="https://github.com/kastnerkyle/kaggle-dogs-vs-cats" target="_blank" rel="noopener">Kaggle Dogs vs. Cats</a> &#x2014;Kaggle&#x4E0A;&#x4ECE;&#x56FE;&#x7247;&#x4E2D;&#x8BC6;&#x522B;&#x732B;&#x548C;&#x72D7;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/benanne/kaggle-galaxies" target="_blank" rel="noopener">Kaggle Galaxy Challenge</a> &#x2014;Kaggle&#x4E0A;&#x9065;&#x8FDC;&#x661F;&#x7CFB;&#x5F62;&#x6001;&#x5206;&#x7C7B;&#x7ADE;&#x8D5B;&#x7684;&#x4F18;&#x80DC;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-gender" target="_blank" rel="noopener">Kaggle Gender</a> &#x2014;Kaggle&#x7ADE;&#x8D5B;&#xFF1A;&#x4ECE;&#x7B14;&#x8FF9;&#x533A;&#x5206;&#x6027;&#x522B;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-merck" target="_blank" rel="noopener">Kaggle Merck</a>&#x2014;Kaggle&#x4E0A;&#x9884;&#x6D4B;&#x836F;&#x7269;&#x5206;&#x5B50;&#x6D3B;&#x6027;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;&#xFF08;&#x9ED8;&#x514B;&#x5236;&#x836F;&#x8D5E;&#x52A9;&#xFF09;</li>
+<li><a href="https://github.com/zygmuntz/kaggle-stackoverflow" target="_blank" rel="noopener">Kaggle Stackoverflow</a>&#x2014;Kaggle&#x4E0A; &#x9884;&#x6D4B;Stack Overflow&#x7F51;&#x7AD9;&#x95EE;&#x9898;&#x662F;&#x5426;&#x4F1A;&#x88AB;&#x5173;&#x95ED;&#x7ADE;&#x8D5B;&#x7684;&#x4EE3;&#x7801;</li>
+<li><a href="https://github.com/zygmuntz/wine-quality" target="_blank" rel="noopener">wine-quality</a> &#x2014;&#x9884;&#x6D4B;&#x7EA2;&#x9152;&#x8D28;&#x91CF;&#x3002;</li>
+</ul>
+<h2 id="&#x5B66;&#x4E60;&#x7F51;&#x7AD9;">&#x5B66;&#x4E60;&#x7F51;&#x7AD9;</h2>
+<ul>
+<li><a href="http://deeplearning.net/" target="_blank" rel="noopener">deeplearning.net</a>&#xFF1A;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x597D;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7F51;&#x7AD9;&#xFF0C;&#x6709;<a href="http://deeplearning.net/datasets/" target="_blank" rel="noopener">dataset</a>&#x3001;<a href="http://deeplearning.net/software_links/" target="_blank" rel="noopener">software</a>&#x3001;<a href="http://deeplearning.net/reading-list/" target="_blank" rel="noopener">reading list</a>&#x8FDE;&#x63A5;&#xFF1B;</li>
+<li><a href="http://www.visionbib.com/" target="_blank" rel="noopener">VisionBib.Com</a>&#xFF1A;&#x5B66;&#x672F;&#x5927;&#x725B;&#x6574;&#x7406;&#x7684;CV&#x8D44;&#x6E90;&#xFF1B;</li>
+<li><a href="http://homepages.inf.ed.ac.uk/rbf/CVonline/" target="_blank" rel="noopener">CVonline</a>&#x6709;&#x4E00;&#x4E2A;&#x975E;&#x5E38;&#x5168;&#x9762;&#x7684;&#x8D44;&#x6E90;&#x94FE;&#x63A5;&#xFF1B;</li>
+<li><a href="http://www.aiweibang.com/u/246181" target="_blank" rel="noopener">&#x65B0;&#x667A;&#x5143;</a>&#x548C;<a href="http://www.jiqizhixin.com/" target="_blank" rel="noopener">&#x673A;&#x5668;&#x4E4B;&#x5FC3;</a>&#x662F;&#x5F88;&#x597D;&#x7684;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x8D44;&#x8BAF;&#x5E73;&#x53F0;&#xFF0C;&#x53E6;&#x5916;&#x63A8;&#x8350;&#x4E00;&#x4E9B;&#x5FAE;&#x4FE1;&#x516C;&#x4F17;&#x53F7;&#xFF1A;&#x673A;&#x5668;&#x5B66;&#x4E60;&#x7814;&#x7A76;&#x4F1A;&#xFF0C;&#x7A0B;&#x5E8F;&#x5A9B;&#x7684;&#x65E5;&#x5E38;&#x3002;</li>
+<li><a href="http://www.kdnuggets.com/" target="_blank" rel="noopener">KDnuggets</a>&#xFF1A;&#x5404;&#x79CD;&#x8D44;&#x6E90;&#xFF0C;&#x535A;&#x6587;&#xFF0C;&#x8BFE;&#x7A0B;&#x3001;&#x8F6F;&#x4EF6;&#x3001;Datasets&#x7B49;&#x94FE;&#x63A5;&#xFF1B;</li>
+<li>&#x56FD;&#x5185;&#x7684;&#x4E24;&#x4E2A;&#x7F51;&#x7AD9;&#xFF1A;<a href="http://www.52ml.net/star" target="_blank" rel="noopener">&#x6211;&#x7231;&#x673A;&#x5668;&#x5B66;&#x4E60;</a>&#xFF0C;<a href="http://ml.memect.com/" target="_blank" rel="noopener">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x65E5;&#x62A5;</a>&#xFF1B;</li>
+<li>Data Sets&#xFF1A;<a href="http://archive.ics.uci.edu/ml/" target="_blank" rel="noopener">UCI Machine Learning Repository</a>&#xFF0C;<a href="https://blog.bigml.com/list-of-public-data-sources-fit-for-machine-learning/" target="_blank" rel="noopener">List of Public Data Sources Fit for Machine Learning</a>&#xFF1B;</li>
+<li>Competitions&#xFF1A;<a href="https://www.kaggle.com/" target="_blank" rel="noopener">Kaggle</a>&#xFF0C;<a href="http://www.data-mining-cup.de/en/dmc-competition/" target="_blank" rel="noopener">DMC</a>&#xFF0C;<a href="https://knowledgepit.fedcsis.org/" target="_blank" rel="noopener">Knowledge Pit</a>&#xFF0C;<a href="http://tunedit.org/challenges" target="_blank" rel="noopener">TunedIT</a>&#xFF0C;<a href="http://www.drivendata.org/competitions/" target="_blank" rel="noopener">DrivenData</a></li>
+</ul>
+<h2 id="python-&#x5DE5;&#x5177;&#x7BB1;">Python &#x5DE5;&#x5177;&#x7BB1;</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/38259784" target="_blank" rel="noopener">&#x7528;python&#x6279;&#x91CF;&#x5904;&#x7406;word&#x6587;&#x6863;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/73199573" target="_blank" rel="noopener">&#x6559;&#x4F60;&#x88C5;&#x903C;&#x4E86;&#xFF1A;&#x600E;&#x4E48;&#x6837;&#x53D1;&#x5E03;&#x4F60;&#x7684; Python &#x4EE3;&#x7801;&#x7ED9;&#x522B;&#x4EBA; &#x201C;pip install&#x201D;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/32874659" target="_blank" rel="noopener">Python&#x5B9E;&#x73B0;&#x52A8;&#x6001;&#x56FE;&#x7684;&#x89E3;&#x6790;&#x3001;&#x5408;&#x6210;&#x4E0E;&#x5012;&#x653E;</a></li>
+<li><a href="https://blog.csdn.net/u011503970/article/details/18615537" target="_blank" rel="noopener">Opencv &#x4F8B;&#x7A0B;&#x8BB2;&#x89E3; 6 ---- &#x56FE;&#x7247;&#x878D;&#x5408; addWeighted&#x5230;&#x5E95;&#x6709;&#x591A;&#x5FEB;&#xFF1F;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/68217206" target="_blank" rel="noopener">Python&#xFF0C;&#x544A;&#x522B;Print&#xFF1F;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/64053192" target="_blank" rel="noopener">Python&#x4E3A;&#x4EC0;&#x4E48;&#x8981;&#x4F7F;&#x7528;&#x63CF;&#x8FF0;&#x7B26;&#xFF1F;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/54436238" target="_blank" rel="noopener">&#x5F39;&#x5E55;&#x541B;&#xFF0C;&#x522B;&#x6321;&#x7740;&#x6211;&#x770B;&#x5C0F;&#x59D0;&#x59D0;&#xFF01;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25465581" target="_blank" rel="noopener">&#x6BCF;&#x4E2A;&#x7A0B;&#x5E8F;&#x5458;&#x90FD;&#x5E94;&#x8BE5;&#x9605;&#x8BFB;&#x7684; 10 &#x7BC7;&#x8BBA;&#x6587;&#xFF08;&#x81F3;&#x5C11;&#x4E24;&#x904D;&#xFF09;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/53732081" target="_blank" rel="noopener">&#x4F7F;&#x7528;Pillow&#x6765;&#x8FDB;&#x884C;&#x56FE;&#x50CF;&#x5904;&#x7406;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/76960575" target="_blank" rel="noopener">&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x5728;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x7684;&#x5E94;&#x7528;&#x4E00;&#x89C8;</a></li>
+<li><a href="https://blog.csdn.net/u012005313/article/details/84035371" target="_blank" rel="noopener">Python Numpy gradient&#x6E90;&#x7801;&#x89E3;&#x6790;</a></li>
+<li><a href="https://github.com/JimmyHHua/opencv_tutorials/blob/master/README_CN.md#opencv-40-tutorial" target="_blank" rel="noopener">&#x4E2D;&#x6587;&#x7248;&#xFF1A;OpenCV 4.0 Tutorial</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/69365714" target="_blank" rel="noopener">&#x3010;&#x56FE;&#x50CF;&#x5904;&#x7406;&#x3011;&#x8FB9;&#x7F18;&#x68C0;&#x6D4B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/29541638" target="_blank" rel="noopener">&#x6DF1;&#x5EA6;&#x5B66;&#x4E60; + OpenCV&#xFF0C;Python&#x5B9E;&#x73B0;&#x5B9E;&#x65F6;&#x89C6;&#x9891;&#x76EE;&#x6807;&#x68C0;&#x6D4B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/63533966" target="_blank" rel="noopener">&#x4F7F;&#x7528;Python+OpenCV&#x8FDB;&#x884C;&#x56FE;&#x50CF;&#x5904;&#x7406;&#xFF08;&#x4E8C;&#xFF09;| &#x89C6;&#x89C9;&#x5165;&#x95E8;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/64536145" target="_blank" rel="noopener">&#x4F7F;&#x7528;Python+OpenCV&#x8FDB;&#x884C;&#x56FE;&#x50CF;&#x5904;&#x7406;&#xFF08;&#x4E09;&#xFF09;| &#x89C6;&#x89C9;&#x5165;&#x95E8;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/35591393" target="_blank" rel="noopener">&#x3010;&#x5C0F;&#x6797;&#x7684;OpenCV&#x57FA;&#x7840;&#x8BFE; 18&#x3011;&#x4E24;&#x79CD;&#x7ECF;&#x5178;&#x89D2;&#x70B9;&#x68C0;&#x6D4B;&#x7B97;&#x6CD5;/&#x840C;&#x306E;&#x80DC;&#x5229;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25556276" target="_blank" rel="noopener">&#x4F7F;&#x7528;&#x4EE3;&#x7801;&#x5C06;&#x7167;&#x7247;&#x53D8;&#x6210;&#x5361;&#x901A;&#x56FE;&#x7247;&#x2014;&#x2014;Python&#x7BC7;</a></li>
+<li><a href="https://www.pytorchtutorial.com/plotneuralnet/" target="_blank" rel="noopener">&#x7528; PlotNeuralNet &#x753B;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x7684;&#x7ED3;&#x6784;&#x56FE;</a></li>
+<li><a href="https://www.jiqizhixin.com/articles/2018-11-07-10" target="_blank" rel="noopener">HiddenLayer&#xFF1A;&#x53EF;&#x89C6;&#x5316;PyTorch&#x3001;TensorFlow&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x56FE;&#x7684;&#x8F7B;&#x91CF;&#x7EA7;&#x5DE5;&#x5177;&#xFF01;</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1442210" target="_blank" rel="noopener">PyTorch &amp; PyTorch Geometric&#x56FE;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;(GNN)&#x5B9E;&#x6218;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/59924278" target="_blank" rel="noopener">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x6210;&#x624D;&#x4E4B;&#x8DEF;&#xFF1A;&#x8FD9;&#x662F;&#x4E00;&#x6761;GitHub&#x9AD8;&#x8D5E;&#x7684;&#x5B66;&#x4E60;&#x8DEF;&#x5F84;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/56932036" target="_blank" rel="noopener">&#x5F3A;&#x63A8;&#xFF01;&#x300A;PyTorch&#x4E2D;&#x6587;&#x624B;&#x518C;&#x300B;&#x5F00;&#x6E90;&#xFF01;&#x9644;&#x8D44;&#x6E90;&#x4E0B;&#x8F7D;&#x94FE;&#x63A5;&#xFF01;</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1030422" target="_blank" rel="noopener">&#x3010;&#x72EC;&#x5BB6;&#x3011;&#x4E00;&#x6587;&#x8BFB;&#x61C2;&#x6587;&#x5B57;&#x8BC6;&#x522B;&#xFF08;OCR&#xFF09;</a></li>
+<li><a href="https://cloud.tencent.com/developer/article/1446707" target="_blank" rel="noopener">&#x505A;&#x9879;&#x76EE;&#x4E00;&#x5B9A;&#x7528;&#x5F97;&#x5230;&#x7684;NLP&#x8D44;&#x6E90;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/64490383" target="_blank" rel="noopener">&#x82F1;&#x6587;&#x6559;&#x7A0B;&#x592A;&#x96BE;&#x5543;&#xFF1F;&#x8FD9;&#x91CC;&#x6709;&#x4E00;&#x4EFD;TensorFlow2.0&#x4E2D;&#x6587;&#x6559;&#x7A0B;&#xFF08;&#x6301;&#x7EED;&#x66F4;&#x65B0;&#x4E2D;&#xFF09;</a></li>
+<li><a href="https://www.cnblogs.com/HelloGreen/p/8817863.html" target="_blank" rel="noopener">Dask&#x6559;&#x7A0B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/60246173" target="_blank" rel="noopener">&#x6574;&#x7406;&#x4E86;70&#x4E2A;Python&#x5B9E;&#x6218;&#x9879;&#x76EE;&#x5217;&#x8868;&#xFF0C;&#x90FD;&#x6709;&#x5B8C;&#x6574;&#x4E14;&#x8BE6;&#x7EC6;&#x7684;&#x6559;&#x7A0B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25939866" target="_blank" rel="noopener">&#x51E0;&#x4E2A;&#x7F51;&#x7AD9; &#xB7; &#x8D85;&#x4E4E;&#x60F3;&#x8C61;&#x7684;AI&#x4EBA;&#x5DE5;&#x667A;&#x80FD;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/60246173" target="_blank" rel="noopener">&#x5F20;&#x5C0F;&#x68EE;&#xFF1A;&#x6574;&#x7406;&#x4E86;70&#x4E2A;Python&#x5B9E;&#x6218;&#x9879;&#x76EE;&#x5217;&#x8868;&#xFF0C;&#x90FD;&#x6709;&#x5B8C;&#x6574;&#x4E14;&#x8BE6;&#x7EC6;&#x7684;&#x6559;&#x7A0B;</a></li>
+<li><a href="https://github.com/BookCollections/python3-cookbook" target="_blank" rel="noopener">&#x300A;Python3 Cookbook&#x300B; 3rd Edition &#x7FFB;&#x8BD1;</a></li>
+<li><a href="https://pymotw.com/3/zipfile/#module-zipfile" target="_blank" rel="noopener" title="Permalink to this headline">zipfile &#x2014; ZIP Archive Access</a></li>
+<li><a href="https://opencv-python-tutorials.readthedocs.io/zh/latest/" target="_blank" rel="noopener">OpenCV-Python Tutorials(4.0.0)</a></li>
+<li><a href="https://www.matplotlib.org.cn/" target="_blank" rel="noopener">Matplotlib &#x4E2D;&#x6587;&#x6587;&#x6863;</a></li>
+</ul>
+<h2 id="ocr">OCR</h2>
+<ul>
+<li><a href="https://blog.csdn.net/dQCFKyQDXYm3F8rB0/article/details/82455892" target="_blank" rel="noopener">OCR&#x5927;&#x7A81;&#x7834;&#xFF1A;Facebook&#x63A8;&#x51FA;&#x5927;&#x89C4;&#x6A21;&#x56FE;&#x50CF;&#x6587;&#x5B57;&#x68C0;&#x6D4B;&#x8BC6;&#x522B;&#x7CFB;&#x7EDF;&#x2014;&#x2014;Rosetta</a></li>
+<li><a href="http://aosabook.org/en/500L/optical-character-recognition-ocr.html" target="_blank" rel="noopener">Optical Character Recognition (OCR)</a></li>
+<li><a href="https://blog.csdn.net/zhubenfulovepoem/article/details/6803150" target="_blank" rel="noopener">&#x5B57;&#x7B26;&#x8BC6;&#x522B;OCR&#x7814;&#x7A76;&#x4E00;&#xFF08;&#x6A21;&#x677F;&#x5339;&#x914D;&amp;BP&#x795E;&#x7ECF;&#x7F51;&#x7EDC;&#x8BAD;&#x7EC3;&#xFF09;</a></li>
+<li><a href="https://blog.csdn.net/byxdaz/article/details/469557" target="_blank" rel="noopener">OCR(&#x8131;&#x673A;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;&#x4E0E;&#x5370;&#x5237;&#x6C49;&#x5B57;&#x8BC6;&#x522B;)</a></li>
+<li><a href="https://blog.csdn.net/kangshuaibing/article/details/84099733" target="_blank" rel="noopener">&#x6587;&#x5B57;&#x8BC6;&#x522B;&#x603B;&#x7ED3;&#xFF08;OCR&#xFF09;</a></li>
+<li><a href="https://blog.csdn.net/bjbz_cxy/article/details/80486160" target="_blank" rel="noopener">&#x57FA;&#x4E8E;Opencv&#x7684;&#x624B;&#x5199;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/foreseerwang/article/details/80833749" target="_blank" rel="noopener">&#x624B;&#x5199;&#x4E2D;&#x6587;&#x6587;&#x7AE0;&#x8BC6;&#x522B;&#xFF08;1&#xFF09;&#x2014;&#x2014;&#x95EE;&#x9898;&#x63CF;&#x8FF0;</a></li>
+<li><a href="https://github.com/HuiyanWen" target="_blank" rel="noopener">HuiyanWen</a>/<strong><a href="https://github.com/HuiyanWen/bysj_hit" target="_blank" rel="noopener">bysj_hit</a></strong>: &#x54C8;&#x5DE5;&#x5927;&#x767E;&#x4F18;&#x6BD5;&#x4E1A;&#x8BBA;&#x6587;&#x3002;&#x91C7;&#x7528;LeNet&#x3001;VggNet&#x3001;AlexNet&#x3001;ResNet&#x3001;CPL&#x7B49;&#x7F51;&#x7EDC;&#x8BC6;&#x522B;21003&#x7C7B;&#x624B;&#x5199;&#x6C49;&#x5B57;&#xFF0C;&#x5E76;&#x91C7;&#x7528;&#x6807;&#x7B7E;&#x6620;&#x5C04;&#x3001;&#x5206;&#x7EA7;&#x805A;&#x7C7B;&#x3001;&#x7B14;&#x753B;&#x7F16;&#x7801;&#x7B49;&#x65B9;&#x6CD5;&#x6539;&#x8FDB;&#x901F;&#x5EA6;&#x548C;&#x51C6;&#x786E;&#x7387;&#x3002;</li>
+<li>&#x57FA;&#x4E8E;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x7684;&#x94F6;&#x884C;&#x5361;&#x53F7;&#x8BC6;&#x522B;&#xFF1A;<a href="https://github.com/HuiyanWen" target="_blank" rel="noopener">HuiyanWen</a>/<strong><a href="https://github.com/HuiyanWen/RJB" target="_blank" rel="noopener">RJB</a></strong></li>
+<li><a href="https://github.com/HuiyanWen" target="_blank" rel="noopener">HuiyanWen</a>/<strong><a href="https://github.com/HuiyanWen/CPL" target="_blank" rel="noopener">CPL</a></strong></li>
+<li>ICDAR2019 ReCTS&#x8131;&#x673A;&#x5355;&#x5B57;&#x8BC6;&#x522B;&#xFF1A;<a href="https://github.com/HuiyanWen" target="_blank" rel="noopener">HuiyanWen</a>/<strong><a href="https://github.com/HuiyanWen/ICDAR2019-ReCTS" target="_blank" rel="noopener">ICDAR2019-ReCTS</a></strong></li>
+<li>&#x56FE;&#x50CF;&#x589E;&#x5F3A;&#xFF1A;<a href="https://github.com/HuiyanWen" target="_blank" rel="noopener">HuiyanWen</a>/<strong><a href="https://github.com/HuiyanWen/pre_pic" target="_blank" rel="noopener">pre_pic</a></strong></li>
+<li><a href="https://blog.csdn.net/yql_617540298/article/details/82251994" target="_blank" rel="noopener">keras+&#x5377;&#x79EF;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;HWDB&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/MLlearnerTJ/article/details/80607388" target="_blank" rel="noopener">HWDB-1.1 &#x624B;&#x5199;&#x6C49;&#x5B57;CNN&#x8BC6;&#x522B;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;</a></li>
+<li><a href="https://blog.csdn.net/zchang81/article/details/77085165" target="_blank" rel="noopener">TensorFlow&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/foreseerwang/article/details/80842498" target="_blank" rel="noopener">&#x624B;&#x5199;&#x4E2D;&#x6587;&#x6587;&#x7AE0;&#x8BC6;&#x522B;&#xFF08;2&#xFF09;&#x2014;&#x2014;&#x6837;&#x672C;&#x96C6;&#x6784;&#x5EFA;</a></li>
+<li><a href="https://blog.csdn.net/qq_27280237/article/details/82429547" target="_blank" rel="noopener">tensorflow&#x4E0B;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;&#x53CA;&#x5176;&#x53EF;&#x89C6;&#x5316;</a></li>
+<li><a href="https://blog.csdn.net/yuXuan_huLu/article/details/78133995" target="_blank" rel="noopener">tensorFlow&#x4E0E;&#x4E2D;&#x6587;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/JohinieLi/article/details/69389980" target="_blank" rel="noopener">python &#x8BFB;&#x53D6;&#x3001;&#x4FDD;&#x5B58;&#x3001;&#x4E8C;&#x503C;&#x5316;&#x3001;&#x7070;&#x5EA6;&#x5316;&#x56FE;&#x7247;+opencv&#x5904;&#x7406;&#x56FE;&#x7247;&#x7684;&#x65B9;&#x6CD5;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24899387" target="_blank" rel="noopener">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x8FDB;&#x9636;&#x7B14;&#x8BB0;&#x4E4B;&#x516B; - TensorFlow&#x4E0E;&#x4E2D;&#x6587;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/m0_37657841/article/details/88672119" target="_blank" rel="noopener">&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;&#x7684;&#x53D1;&#x5C55;&#x7EFC;&#x8FF0;</a></li>
+<li><a href="https://blog.csdn.net/foreseerwang/article/details/80914473" target="_blank" rel="noopener">&#x624B;&#x5199;&#x4E2D;&#x6587;&#x6587;&#x7AE0;&#x8BC6;&#x522B;&#xFF08;3&#xFF09;&#x2014;&#x2014;data feeding</a></li>
+<li><a href="https://blog.csdn.net/MLlearnerTJ/article/details/80607388" target="_blank" rel="noopener">HWDB-1.1 &#x624B;&#x5199;&#x6C49;&#x5B57;CNN&#x8BC6;&#x522B;&#x6A21;&#x578B;&#x8BAD;&#x7EC3;</a></li>
+<li><a href="https://blog.csdn.net/as472780551/article/details/78582641" target="_blank" rel="noopener">2017.11.20TensorFlow&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/jy02660221/article/details/52012543" target="_blank" rel="noopener">&#x6C49;&#x5B57;&#x5E38;&#x7528;&#x7279;&#x5F81;&#x7684;&#x63D0;&#x53D6;&#x65B9;&#x6CD5;&#x8BE6;&#x89E3;</a></li>
+<li><a href="https://blog.csdn.net/weixin_44510615/article/details/89791517" target="_blank" rel="noopener">GAN&#x5904;&#x7406;&#x624B;&#x5199;&#x56FE;&#x7247;&#x6570;&#x636E;&#x96C6;</a></li>
+<li><a href="https://blog.csdn.net/qq_35337126/article/details/84639815" target="_blank" rel="noopener">&#x8054;&#x673A;&#x4E0E;&#x8131;&#x673A; &#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://cloud.tencent.com/developer/information/&#x624B;&#x5199;&#x4F53;&#x6C49;&#x5B57;&#x8BC6;&#x522B;" target="_blank" rel="noopener">&#x624B;&#x5199;&#x4F53;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="http://www.linyibin.cn/2016/11/10/technology-IME-HandWritingRecognization/" target="_blank" rel="noopener">Technology-&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://www.jianshu.com/p/e4c429c8fe97" target="_blank" rel="noopener">300&#x884C;&#x4EE3;&#x7801;&#x5B9E;&#x73B0;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/24698483" target="_blank" rel="noopener">TensorFlow&#x4E0E;&#x4E2D;&#x6587;&#x624B;&#x5199;&#x6C49;&#x5B57;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/68356509" target="_blank" rel="noopener">TensorFlow 2.0 &#x4E2D;&#x6587;&#x624B;&#x5199;&#x5B57;&#x8BC6;&#x522B;&#xFF08;&#x6C49;&#x5B57;OCR&#xFF09;</a></li>
+<li><a href="https://www.zhihu.com/question/20191727" target="_blank" rel="noopener">OCR&#x6587;&#x5B57;&#x8BC6;&#x522B;&#x7528;&#x7684;&#x662F;&#x4EC0;&#x4E48;&#x7B97;&#x6CD5;&#xFF1F;</a></li>
+<li><a href="https://www.cnblogs.com/skyfsm/p/10335717.html" target="_blank" rel="noopener">&#x3010;OCR&#x6280;&#x672F;&#x7CFB;&#x5217;&#x4E4B;&#x4E03;&#x3011;&#x7AEF;&#x5230;&#x7AEF;&#x4E0D;&#x5B9A;&#x957F;&#x6587;&#x5B57;&#x8BC6;&#x522B;CRNN&#x7B97;&#x6CD5;&#x8BE6;&#x89E3;</a></li>
+<li><a href="https://github.com/jiangxiluning" target="_blank" rel="noopener">jiangxiluning</a>/<strong><a href="https://github.com/jiangxiluning/chinese-ocr" target="_blank" rel="noopener">chinese-ocr</a></strong></li>
+<li><a href="https://github.com/xiaofengShi" target="_blank" rel="noopener">xiaofengShi</a>/<strong><a href="https://github.com/xiaofengShi/CHINESE-OCR" target="_blank" rel="noopener">CHINESE-OCR</a></strong></li>
+<li><a href="https://blog.csdn.net/liuxiaoheng1992/article/details/82632594" target="_blank" rel="noopener">&#x4E2D;&#x6587;&#x6587;&#x5B57;&#x68C0;&#x6D4B;&#x4E0E;&#x8BC6;&#x522B;&#x7684;&#x8BC4;&#x6D4B;&#x65B9;&#x6CD5;</a></li>
+</ul>
+<h2 id="tsr&#x6C7D;&#x8F66;&#x5B89;&#x5168;&#x7CFB;&#x7EDF;&#x7684;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x8BC6;&#x522B;">TSR&#xFF08;&#x6C7D;&#x8F66;&#x5B89;&#x5168;&#x7CFB;&#x7EDF;&#x7684;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x8BC6;&#x522B;&#xFF09;</h2>
+<ul>
+<li><a href="http://www.itas-hk.com/news/cjwt/86.html" target="_blank" rel="noopener">&#x4EC0;&#x4E48;&#x662F;&#x6C7D;&#x8F66;&#x5B89;&#x5168;&#x7CFB;&#x7EDF;&#x7684;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x8BC6;&#x522B;&#xFF08;TSR&#xFF09;&#xFF1F;</a></li>
+<li><a href="https://blog.csdn.net/shebao3333/article/details/79008688" target="_blank" rel="noopener">&#x673A;&#x5668;&#x5B66;&#x4E60;&#x5B9E;&#x6218;&#xFF1A;&#x7528;&#x80F6;&#x56CA;&#x7F51;&#x7EDC;&#x8BC6;&#x522B;&#x4EA4;&#x901A;&#x6807;&#x5FD7;</a></li>
+<li><a href="https://blog.csdn.net/a853459004/article/details/55228904" target="_blank" rel="noopener">Traffic Sign Recognition</a></li>
+<li><a href="https://cn.bing.com/academic/search?FORM=SAFOS&amp;q=Traffic%20sign%20recognition" target="_blank" rel="noopener">&#x5FC5;&#x5E94;&#xFF1A;Traffic sign recognition</a></li>
+<li><a href="https://github.com/topics/traffic-sign-recognition" target="_blank" rel="noopener">Topic: traffic-sign-recognition</a></li>
+<li><a href="https://www.kaggle.com/meowmeowmeowmeowmeow/gtsrb-german-traffic-sign" target="_blank" rel="noopener">Kaggle: GTSRB - German Traffic Sign Recognition Benchmark</a></li>
+<li><a href="http://benchmark.ini.rub.de/?section=gtsrb&amp;subsection=news" target="_blank" rel="noopener">&#x6570;&#x636E;&#xFF1A;The German Traffic Sign Recognition Benchmark</a></li>
+<li><a href="https://ww2.mathworks.cn/help/vision/examples/traffic-warning-sign-recognition.html" target="_blank" rel="noopener">Matlab: Traffic Warning Sign Recognition</a></li>
+</ul>
+<h2 id="&#x81EA;&#x52A8;&#x9A7E;&#x9A76;">&#x81EA;&#x52A8;&#x9A7E;&#x9A76;</h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/66320870" target="_blank" rel="noopener">&#x5982;&#x4F55;&#x6210;&#x4E3A;&#x4E00;&#x540D;&#x5408;&#x683C;&#x7684;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x5DE5;&#x7A0B;&#x5E08;&#xFF1F;</a></li>
+<li><a href="https://blog.csdn.net/orange_littlegirl/article/details/90453585" target="_blank" rel="noopener">&#x4ECE;&#x5C0F;&#x767D;&#x5230;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x7B97;&#x6CD5;&#x5DE5;&#x7A0B;&#x5E08;&#x7684;&#x8F6C;&#x578B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/56594089" target="_blank" rel="noopener">&#x4E00;&#x4E2A;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x5DE5;&#x7A0B;&#x5E08;&#x773C;&#x4E2D;&#x7684;&#x81EA;&#x52A8;&#x9A7E;&#x9A76;</a></li>
+</ul>
+<h2 id="an-open-autonomous-driving-platform">An open autonomous driving platform</h2>
+<ul>
+<li>&#x767E;&#x5EA6;&#xFF1A;<a href="https://github.com/ApolloAuto" target="_blank" rel="noopener">ApolloAuto</a>/<strong><a href="https://github.com/ApolloAuto/apollo" target="_blank" rel="noopener">apollo</a></strong></li>
+<li>&#x5FAE;&#x8F6F;&#xFF1A;<a href="https://github.com/microsoft" target="_blank" rel="noopener">microsoft</a>/<strong><a href="https://github.com/microsoft/AutonomousDrivingCookbook" target="_blank" rel="noopener">AutonomousDrivingCookbook</a></strong></li>
+</ul>
+<h2 id="chaos">chaos</h2>
+<ul>
+<li><a href="https://www.cnblogs.com/skyfsm/category/1000207.html" target="_blank" rel="noopener">opencv&#x63A2;&#x7D22;</a></li>
+<li><a href="https://www.cnblogs.com/xiaotie/archive/2009/01/15/1376677.html" target="_blank" rel="noopener">&#x8F66;&#x724C;&#x8BC6;&#x522B;&#x53CA;&#x9A8C;&#x8BC1;&#x7801;&#x8BC6;&#x522B;&#x7684;&#x4E00;&#x822C;&#x601D;&#x8DEF;</a></li>
+<li><a href="https://github.com/aosabook" target="_blank" rel="noopener">aosabook</a>/<strong><a href="https://github.com/aosabook/500lines" target="_blank" rel="noopener">500lines</a></strong></li>
+<li><a href="https://blog.csdn.net/u014380165/article/details/76946425" target="_blank" rel="noopener">CVPR2017-&#x5982;&#x4F55;&#x5728;&#x65E0;&#x6807;&#x7B7E;&#x6570;&#x636E;&#x96C6;&#x4E0A;&#x8BAD;&#x7EC3;&#x6A21;&#x578B;</a></li>
+<li><a href="https://blog.csdn.net/u010402786/article/details/49947007" target="_blank" rel="noopener">&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x6570;&#x636E;&#x96C6;&#xFF08;&#x4E8C;&#xFF09;</a></li>
+</ul>
+<h3 id="traffic-sign-detection">traffic sign detection</h3>
+<ul>
+<li><a href="https://yq.aliyun.com/articles/195729" target="_blank" rel="noopener">&#x51C6;&#x786E;&#x7387;98%&#x7684;&#x6DF1;&#x5EA6;&#x5B66;&#x4E60;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x8BC6;&#x522B;&#x662F;&#x5982;&#x4F55;&#x505A;&#x5230;&#x7684;&#xFF1F;</a></li>
+<li><a href="https://www.jianshu.com/p/d8feaddc7bdf" target="_blank" rel="noopener">[&#x8BD1;]&#x57FA;&#x4E8E;Tensorflow&#x7684;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/majichen95/article/details/80380668" target="_blank" rel="noopener">Opencv3+VS2017&#x5B9E;&#x73B0;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x68C0;&#x6D4B;</a></li>
+<li><a href="https://blog.csdn.net/u010323150/article/details/84341291" target="_blank" rel="noopener">&#x4E2D;&#x56FD;&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x68C0;&#x6D4B;&#x6570;&#x636E;&#x96C6;</a></li>
+<li><a href="https://blog.csdn.net/qq_19281769/article/details/84859993" target="_blank" rel="noopener">&#x4EA4;&#x901A;&#x6807;&#x724C;&#x68C0;&#x6D4B;&#x4E0E;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://blog.csdn.net/xiaojiajia007/article/details/53183102" target="_blank" rel="noopener">&#x4EA4;&#x901A;&#x6807;&#x5FD7;&#x7684;&#x68C0;&#x6D4B;&#x4E0E;&#x8BC6;&#x522B;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/25754846" target="_blank" rel="noopener">&#x5377;&#x79EF;&#xFF1A;&#x5982;&#x4F55;&#x6210;&#x4E3A;&#x4E00;&#x4E2A;&#x5F88;&#x5389;&#x5BB3;&#x7684;&#x795E;&#x7ECF;&#x7F51;&#x7EDC;</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/57186328" target="_blank" rel="noopener">&#x81EA;&#x52A8;&#x9A7E;&#x9A76;&#x4E2D;&#x57FA;&#x4E8E;&#x8F66;&#x9053;&#x7EBF;&#x7684;&#x8F66;&#x4F53;&#x5B9A;&#x4F4D;&#x65B9;&#x6CD5;&#x4ECB;&#x7ECD;</a></li>
+<li><a href="https://blog.csdn.net/cg129054036/article/details/88751757" target="_blank" rel="noopener">Apollo&#x8FDB;&#x9636;&#x8BFE;&#x7A0B; &#x246C; - Apollo&#x65E0;&#x4EBA;&#x8F66;&#x81EA;&#x5B9A;&#x4F4D;&#x6280;&#x672F;&#x5165;&#x95E8;</a></li>
+</ul>
+<h3 id="&#x81EA;&#x52A8;&#x6807;&#x6CE8;&#x6280;&#x672F;">&#x81EA;&#x52A8;&#x6807;&#x6CE8;&#x6280;&#x672F;</h3>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/47476910" target="_blank" rel="noopener">&#x56FE;&#x50CF;&#x6807;&#x6CE8;&#xFF0C;&#x4E09;&#x500D;&#x52A0;&#x901F;&#xFF1A;&#x8C37;&#x6B4C;AI&#x65B0;&#x65B9;&#x6848;&#xFF0C;&#x6570;&#x636E;&#x6C11;&#x5DE5;&#x7684;&#x798F;&#x97F3; | Demo&#x53EF;&#x73A9;&#x800D;</a></li>
+</ul>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+        </div>
+        <div class="card">
+            
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div class="comment_headling" style="font-size: 20px; font-weight: 700; position: relative; left: 20px; top: 15px; padding-bottom: 5px;">
+        <i class="fas fa-comments fa-fw" aria-hidden="true"></i>
+        <span>评论</span>
+    </div>
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: 'd52cfeaf298279fd484b',
+        clientSecret: '97687c5869aa1073c670481e8acd37817eda5fa0',
+        repo: 'xinetzone.github.io',
+        owner: 'xinetzone',
+        admin: "xinetzone",
+        id: '2019-10-17T00-24-35',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+            
+
+            
+
+            
+
+            
+
+            
+        </div>
+    </div>
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://xinetzone.github.io" target="_blank">刘新伟</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">26.1k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/xinetzone" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:xinzone@outlook.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=735613050" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 735613050" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+    <a href="https://www.zhihu.com/people/liu-xin-wei-55/activities" target="_blank" rel="noopener" data-tooltip="关注我的知乎: liu-xin-wei-55" data-position="top" data-delay="50">
+        <i class="fab fa-zhihu1">知</i>
+    </a>
+
+
+
+    <a href="/rss2.xml" class="tooltipped" target="_blank" data-tooltip="RSS2 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+
+    <a href="https://www.linkedin.com/in/xinet" target="_blank" rel="noopener" class="tooltipped" data-tooltip="领英联系我: xinet" data-position="top" data-delay="50">
+        <i class="fab fa-linkedin"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
